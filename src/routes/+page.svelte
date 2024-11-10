@@ -1,2 +1,6 @@
-<h1 class="text-3xl">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1 class="font-potra text-center text-9xl mt-16 mb-4">
+  Cosmic Flowchart
+</h1>
+<p class="font-elliptica-bold text-6xl text-center my-4">
+  Coming soon
+</p>

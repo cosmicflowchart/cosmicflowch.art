@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+	@font-face {
+		font-family: 'Potra';
+		src: local('Potra'), local('potra'), url('/fonts/potra/Potra.ttf');
+		font-weight: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica'), local('elliptica'), url('/fonts/elliptica/Elliptica.otf');
+		font-weight: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica Bold'), local('Elliptica-Bold'), local('elliptica bold'), local('elliptica-bold'), url('/fonts/elliptica/EllipticaBold.otf');
+		font-weight: bold;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica Light'), local('Elliptica-Light'), local('elliptica light'), local('elliptica-light'), url('/fonts/elliptica/EllipticaLight.otf');
+		font-weight: 300;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica Italic'), local('Elliptica-Italic'), local('elliptica italic'), local('elliptica-italic'), url('/fonts/elliptica/EllipticaItalic.otf');
+		font-weight: normal;
+    font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica Bold Italic'), local('Elliptica-Bold-Italic'), local('elliptica bold italic'), local('elliptica-bold-italic'), url('/fonts/elliptica/EllipticaBoldItalic.otf');
+		font-weight: bold;
+    font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Elliptica';
+		src: local('Elliptica Light Italic'), local('Elliptica-Light-Italic'), local('elliptica light italic'), local('elliptica-light-italic'), url('/fonts/elliptica/EllipticaLightItalic.otf');
+		font-weight: 300;
+    font-style: italic;
+		font-display: swap;
+	}
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

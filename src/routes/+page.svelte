@@ -1,12 +1,12 @@
 <script>
+  import HomepageLogo from '$lib/components/HomepageLogo.svelte';
   import Icon from '$lib/components/Icon.svelte';
   const { data } = $props();
 </script>
 
-
-<h1 class="font-potra text-center text-9xl mt-16 mb-4">
-  Cosmic Flowchart
-</h1>
+<div class="flex justify-center my-16">
+  <HomepageLogo />
+</div>
 
 <p class="font-elliptica-bold text-6xl text-center my-4">
   Coming soon
@@ -19,3 +19,4 @@
   </a>
   {/each}
 </div>
+

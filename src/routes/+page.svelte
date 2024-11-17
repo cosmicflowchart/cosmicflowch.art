@@ -4,6 +4,10 @@
   const { data } = $props();
 </script>
 
+<svelte:head>
+  <title>Cosmic Flowchart</title>
+</svelte:head>
+
 <div class="flex justify-center my-16">
   <HomepageLogo />
 </div>

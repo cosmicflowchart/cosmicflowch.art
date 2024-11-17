@@ -9,8 +9,8 @@
 <style lang="postcss">
 :root {
   --foreground: theme('colors.cfc-purple.950');
-  --background-start: theme('colors.cfc-purple.400');
-  --background-end: theme('colors.cfc-purple.300');
+  --background-start: theme('colors.cfc-purple.300');
+  --background-end: theme('colors.cfc-purple.200');
   --background-image: url('/svg/cfc-bg-stars-light.svg');
 }
 

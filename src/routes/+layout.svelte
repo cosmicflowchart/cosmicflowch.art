@@ -11,7 +11,7 @@
   --foreground: theme('colors.cfc-purple.950');
   --background-start: theme('colors.cfc-purple.400');
   --background-end: theme('colors.cfc-purple.300');
-  --background-image: url('svg/cfc-bg-stars-light.svg');
+  --background-image: url('/svg/cfc-bg-stars-light.svg');
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +19,7 @@
     --foreground: theme('colors.cfc-purple.300');
     --background-start: theme('colors.cfc-purple.950');
     --background-end: theme('colors.cfc-purple.900');
-    --background-image: url('svg/cfc-bg-stars-dark.svg');
+    --background-image: url('/svg/cfc-bg-stars-dark.svg');
   }
 }
 

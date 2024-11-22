@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -26,16 +28,8 @@ export default {
       },
       fontFamily: {
         'elliptica': ['Elliptica'],
-        'sans': [
-          'Elliptica',
-          'ui-sans-serif',
-          'system-ui',
-          'sans-serif',
-          'Apple Color Emoji',
-          'Segoe UI Emoji',
-          'Segoe UI Symbol',
-          'Noto Color Emoji',
-        ],
+        'exo2': ['Exo2'],
+        'sans': ['Exo2', ...defaultTheme.fontFamily.sans],
         'potra': ['Potra'],
       }
     },

@@ -12,7 +12,7 @@
   <HomepageLogo />
 </div>
 
-<p class="font-elliptica-bold text-6xl text-center my-4">
+<p class="text-6xl text-center my-4">
   Coming soon
 </p>
 

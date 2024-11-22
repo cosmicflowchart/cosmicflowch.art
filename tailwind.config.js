@@ -27,7 +27,6 @@ export default {
         }
       },
       fontFamily: {
-        'elliptica': ['Elliptica'],
         'exo2': ['Exo2'],
         'sans': ['Exo2', ...defaultTheme.fontFamily.sans],
         'potra': ['Potra'],

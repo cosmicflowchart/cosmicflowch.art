@@ -32,12 +32,6 @@
       var(--background-end)
     ) 
     var(--background-start);
-  background-image: var(--background-image),
-    linear-gradient(
-      to bottom right,
-      transparent,
-      var(--background-end)
-    )  ;
   background-attachment: fixed;
 }
 </style>

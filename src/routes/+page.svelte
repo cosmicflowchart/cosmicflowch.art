@@ -24,3 +24,13 @@
   {/each}
 </div>
 
+<style lang="postcss">
+:global(html) {
+  background-image: var(--background-image),
+    linear-gradient(
+      to bottom right,
+      transparent,
+      var(--background-end)
+    )  ;
+}
+</style>

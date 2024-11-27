@@ -3,7 +3,7 @@ import { STRAPI_API_URL, STRAPI_API_TOKEN } from '$env/static/private';
 
 export const load = async ({ params }) => {
 
-  const response = await fetch(`${STRAPI_API_URL}/api/projects?filters[sku][$eqi]=${params.sku}`, {
+  const response = await fetch(`${STRAPI_API_URL}/api/projects?filters[sku][$eqi]=${params.sku}&populate=*`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

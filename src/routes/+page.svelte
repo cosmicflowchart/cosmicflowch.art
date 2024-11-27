@@ -1,29 +1,9 @@
 <script>
-  import "../app.css";
   import HomepageLogo from '$lib/components/HomepageLogo.svelte';
   import Icon from '$lib/components/Icon.svelte';
   const { data } = $props();
 </script>
 
-<style lang="postcss">
-:global(html) {
-  color: var(--banner-foreground);
-  background:
-    linear-gradient(
-      to bottom right,
-      transparent,
-      var(--banner-background-end)
-    ) 
-    var(--banner-background-start);
-  background-attachment: fixed;
-  background-image: var(--banner-background-image),
-    linear-gradient(
-      to bottom right,
-      transparent,
-      var(--banner-background-end)
-    );
-}
-</style>
 
 <svelte:head>
   <title>Cosmic Flowchart</title>
@@ -46,4 +26,3 @@
     {/each}
   </div>
 </div>
-

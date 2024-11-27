@@ -6,8 +6,21 @@
   <title>{data.project.title} | Cosmic Flowchart</title>
 </svelt:head>
 
-<div>
+<div class="max-w-screen-xl mx-auto px-4">
   <h1 class="text-6xl text-center my-4">{data.project.title}</h1>
-  <p class="text-xl text-center my-4">{data.project.description}</p>
+  <p class="max-w-screen-md text-xl text-center my-4 mx-auto">{data.project.description}</p>
+
+  <div class="flex flex-wrap justify-center px-4">
+    {#each data.project.images as image}
+    <div class="p-4">
+      <img 
+        height={500}
+        width={image.width * 500 / image.height} 
+        src={image.formats.small.url}
+        alt={image.alt}
+      />
+    </div>
+    {/each}
+  </div>
   {@render children()}
 </div>

@@ -2,9 +2,14 @@
   const { children, data } = $props();
 </script>
 
-<svelt:head>
+<svelte:head>
   <title>{data.project.title} | Cosmic Flowchart</title>
-</svelt:head>
+  <meta name="description" content="{data.project.description}" />
+  <meta name="og:description" content="{data.project.description}" />
+  <meta name="og:title" content="{data.project.title} | Cosmic Flowchart" />
+  <meta name="og:locale" content="en_US" />
+  <meta name="og:image" content="{data.project.images[0].formats.thumbnail.url}" />
+</svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">
   <h1 class="text-6xl text-center my-4">{data.project.title}</h1>

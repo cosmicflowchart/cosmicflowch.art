@@ -4,7 +4,7 @@
   let width = 540.968 / 429.606 * height;
 </script>
 
-<svg width="{width}" height="{height}" viewBox="0 0 143.131 113.667" xmlns="http://www.w3.org/2000/svg" class={$$props.class}>
+<svg viewBox="0 0 143.131 113.667" xmlns="http://www.w3.org/2000/svg" class={$$props.class}>
   <g style="display:inline">
     <path style="fill:#000;fill-opacity:1;stroke-width:.285782" d="M38.377 48.959c-.012 7.235 1.381 14.528 4.57 21.053 4.285 8.97 11.945 16.532 21.445 19.766 7.146 2.487 15.16 2.4 22.22-.344 8.825-3.335 15.963-10.391 20.138-18.774 3.474-6.849 5.014-14.592 4.848-22.248H38.359l.018.547z" transform="translate(-3.435 6.93)"/>
     <path style="fill:#eaf;fill-opacity:1;stroke-width:.285782" d="M40 50a35 40 0 0 0 35 40 35 40 0 0 0 35-40Z" transform="translate(-3.435 6.93)"/>

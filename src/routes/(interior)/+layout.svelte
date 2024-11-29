@@ -5,9 +5,7 @@
   let showMenu = $state(false);
 
   function toggleNavbar() {
-    console.log('clicked');
     showMenu = !showMenu;
-    console.log(showMenu);
   }
 </script>
 

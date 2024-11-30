@@ -5,11 +5,11 @@ export const load = async ({ url }) => {
   const pageSize = url.searchParams.get('pageSize') || 12;
 
   const response = await fetch(
-    `${STRAPI_API_URL}/api/projects` 
+    `${STRAPI_API_URL}/api/projects`
     + `?pagination[page]=${page}`
     + `&pagination[pageSize]=${pageSize}`
     + `&sort=sku`
-    + `&populate=*`, 
+    + `&populate=*`,
     {
       method: 'GET',
       headers: {
@@ -20,7 +20,6 @@ export const load = async ({ url }) => {
   );
 
   const projects = await response.json();
-  console.log(projects.meta);
   return {
     projects: projects.data,
     meta: projects.meta

@@ -1,8 +1,15 @@
 <script>
   import "../app.css";
+  const { children, data } = $props();  
 </script>
 
-<slot />
+<svelte:head>
+  {#if data.umami.scriptUrl && data.umami.websiteId}
+    <script defer src="{data.umami.scriptUrl}" data-website-id="{data.umami.websiteId}"></script>
+  {/if}
+</svelte:head>
+
+{@render children()}
 
 <style lang="postcss">
 :root {

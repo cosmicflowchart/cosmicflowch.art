@@ -11,12 +11,6 @@
   const pageBaseLink = `/projects?pageSize=${data.meta.pagination.pageSize}&page=`; 
 </script>
 
-<style lang="postcss">
-#pagination > div {
-  @apply min-w-8 mx-2 p-2 bg-cfc-purple-800 rounded-xl flex items-center justify-center;
-}
-</style>
-
 <svelte:head>
   <title>{pageTitle} | Cosmic Flowchart</title>
   <meta name="description" content="{pageDescription}" />
@@ -71,3 +65,9 @@
   </div>
   {/if}
 </div>
+
+<style lang="postcss">
+#pagination > div {
+  @apply min-w-8 mx-2 p-2 bg-cfc-purple-800 rounded-xl flex items-center justify-center;
+}
+</style>

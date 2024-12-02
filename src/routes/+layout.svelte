@@ -4,8 +4,9 @@
 </script>
 
 <svelte:head>
-  {#if data.umami.scriptUrl && data.umami.websiteId}
-    <script defer src="{data.umami.scriptUrl}" data-website-id="{data.umami.websiteId}"></script>
+  {#if data.goatCounter.scriptUrl && data.goatCounter.websiteUrl}
+    <script data-goatcounter="{data.goatCounter.websiteUrl}"
+        async src="{data.goatCounter.scriptUrl}"></script>
   {/if}
 </svelte:head>
 

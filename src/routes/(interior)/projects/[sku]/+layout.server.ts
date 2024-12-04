@@ -14,7 +14,7 @@ export const load = async ({ params }) => {
 
   if (project.data.length > 0) {
     if (!params.slug || project.data[0].slug !== params.slug) {
-      redirect(302, `/projects/${project.data[0].sku.toLowerCase()}/${project.data[0].slug}`);
+      redirect(307, `/projects/${project.data[0].sku.toLowerCase()}/${project.data[0].slug}`);
     }
     return {
       project: project.data[0]

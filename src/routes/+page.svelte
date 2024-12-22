@@ -58,6 +58,8 @@
 				<Icon iconName="creative-commons-by" class="inline-flex h-4 mb-1" />
 				<Icon iconName="creative-commons-sa" class="inline-flex h-4 mb-1" />
 			</a>
+			&ndash;
+			<a href="/privacy">Privacy</a>
 		</p>
 	</div>
 </div>

@@ -1,6 +1,7 @@
 <script>
 	import HomepageLogo from '$lib/components/HomepageLogo.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import RichText from '$lib/components/RichText.svelte';
 	const { data } = $props();
 	let lastUpdateYear = 2024;
 
@@ -16,53 +17,58 @@
 	<meta name="og:locale" content="en_US" />
 </svelte:head>
 
-<div class="max-w-screen-xl mx-auto">
-	<div class="min-h-[calc(100vh-120px)]">
-		<div class="flex justify-center my-16 mx-4">
-			<HomepageLogo class="max-w-md" />
-		</div>
-
-		<div
-			class="flex flex-col space-y-4 justify-center items-center md:space-y-0 md:flex-row md:space-x-10 text-6xl my-8 mx-auto"
-		>
-			<a href="/projects">Projects</a>
-			<a href="/patterns">Patterns</a>
-			<a href="/blog">Blog</a>
-		</div>
-
-		<div class="flex justify-center my-8">
-			{#each data.homepage.socialLinks as link}
-				<a
-					href={link.url}
-					target="_blank"
-					rel="nofollow me"
-					aria-label={link.label}
-					title={link.label}
-				>
-					<Icon iconName={link.iconName} class="w-24 h-24" />
-				</a>
-			{/each}
-		</div>
+<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)]">
+	<div class="flex justify-center my-16 mx-4">
+		<HomepageLogo class="max-w-md" />
 	</div>
-	<div class="max-w-screen-xl mx-auto p-4">
-		<p class="text-lg text-center">
-			Cosmic Flowchart &copy; 2024{lastUpdateYear > 2024 ? `-${lastUpdateYear - 2000}` : ''} by Ulrich
-			Feindt. Unless noted otherwise, this work is licensed under
+
+	<RichText
+		paragraphClass="max-w-screen-md text-2xl my-4 mx-auto"
+		unorderedListClass="max-w-screen-md text-2xl my-4 mx-auto list-disc pl-6"
+		richText={data.homepage.aboutMeText}
+	/>
+
+	<div
+		class="flex flex-col space-y-4 justify-center items-center md:space-y-0 md:flex-row md:space-x-10 text-6xl my-8 mx-auto"
+	>
+		<a href="/projects">Projects</a>
+		<a href="/patterns">Patterns</a>
+		<a href="/blog">Blog</a>
+	</div>
+
+	<div class="flex justify-center my-8">
+		{#each data.homepage.socialLinks as link}
 			<a
-				href="https://creativecommons.org/licenses/by-sa/4.0"
+				href={link.url}
 				target="_blank"
-				rel="license noopener noreferrer"
+				rel="nofollow me"
+				aria-label={link.label}
+				title={link.label}
 			>
-				CC BY-SA 4.0
-				<Icon iconName="creative-commons" class="inline-flex w-4 mb-1" />
-				<Icon iconName="creative-commons-by" class="inline-flex h-4 mb-1" />
-				<Icon iconName="creative-commons-sa" class="inline-flex h-4 mb-1" />
+				<Icon iconName={link.iconName} class="w-24 h-24" />
 			</a>
-			&ndash;
-			<a href="/privacy">Privacy</a>
-		</p>
+		{/each}
 	</div>
-</div>
+</main>
+
+<footer class="max-w-screen-xl mx-auto max-w-screen-xl mx-auto p-4">
+	<p class="text-lg text-center">
+		Cosmic Flowchart &copy; 2024{lastUpdateYear > 2024 ? `-${lastUpdateYear - 2000}` : ''} by Ulrich
+		Feindt. Unless noted otherwise, this work is licensed under
+		<a
+			href="https://creativecommons.org/licenses/by-sa/4.0"
+			target="_blank"
+			rel="license noopener noreferrer"
+		>
+			CC BY-SA 4.0
+			<Icon iconName="creative-commons" class="inline-flex w-4 mb-1" />
+			<Icon iconName="creative-commons-by" class="inline-flex h-4 mb-1" />
+			<Icon iconName="creative-commons-sa" class="inline-flex h-4 mb-1" />
+		</a>
+		&ndash;
+		<a href="/privacy">Privacy</a>
+	</p>
+</footer>
 
 <style>
 	a {

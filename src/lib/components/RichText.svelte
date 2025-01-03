@@ -4,7 +4,7 @@
 	type RichTextElement = {
 		type: 'list' | 'list-item' | 'heading' | 'paragraph';
 		format?: 'ordered' | 'unordered';
-		children: (TextElement | RichTextElement)[];
+		children: (LinkElement | TextElement | RichTextElement)[];
 		level?: number;
 	};
 
@@ -16,7 +16,14 @@
 		underline?: boolean;
 	};
 
+	type LinkElement = {
+		type: 'link';
+		url: string;
+		children: TextElement[];
+	};
+
 	export let richText: RichTextElement[];
+	export let linkClass = 'text-cfc-purple-200 hover:text-cfc-purple-400';
 	export let heading1Class = 'text-6xl text-center my-4';
 	export let heading2Class = 'text-4xl text-center my-4';
 	export let heading3Class = 'text-2xl text-center my-4';
@@ -73,6 +80,12 @@
 			{#each element.children as child}
 				{#if child.type === 'text'}
 					<RichtTextText text={child} />
+				{:else if child.type === 'link'}
+					<a class={linkClass} href={child.url}>
+						{#each child.children as grandchild}
+							<RichtTextText text={grandchild} />
+						{/each}
+					</a>
 				{/if}
 			{/each}
 		</p>

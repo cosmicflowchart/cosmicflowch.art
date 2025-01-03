@@ -2,6 +2,7 @@
 	import RichText from '$lib/components/RichText.svelte';
 	const { data } = $props();
 	const { pattern } = data;
+	console.log(JSON.stringify(pattern.description, null, 2));
 </script>
 
 <svelte:head>
@@ -17,10 +18,7 @@
 
 <div class="max-w-screen-xl mx-auto px-4">
 	<h1 class="text-6xl text-center my-4">{pattern.title}</h1>
-	<RichText
-		paragraphClass="max-w-screen-md text-xl text-center my-4 mx-auto"
-		richText={pattern.description}
-	/>
+	<RichText richText={pattern.description} />
 
 	<div class="flex flex-wrap justify-center px-4">
 		{#each pattern.images as image}

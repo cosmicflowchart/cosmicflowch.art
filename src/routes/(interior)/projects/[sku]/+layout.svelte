@@ -5,11 +5,13 @@
 
 <svelte:head>
 	<title>{data.project.title} | Cosmic Flowchart</title>
-	<meta name="description" content={data.project.description} />
-	<meta name="og:description" content={data.project.description} />
+	<meta name="description" content={data.project.shortDescription} />
+	<meta name="og:description" content={data.project.shortDescription} />
 	<meta name="og:title" content="{data.project.title} | Cosmic Flowchart" />
 	<meta name="og:locale" content="en_US" />
-	<meta name="og:image" content={data.project.images[0].formats.thumbnail.url} />
+	{#if data.project.images}
+		<meta name="og:image" content={data.project.images[0].formats.thumbnail.url} />
+	{/if}
 </svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">

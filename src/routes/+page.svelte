@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="flex justify-center my-8">
-		{#each data.homepage.socialLinks as link}
+		{#each data.footer.socialLinks as link}
 			<a
 				href={link.url}
 				target="_blank"

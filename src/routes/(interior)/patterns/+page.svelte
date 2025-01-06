@@ -1,14 +1,11 @@
 <script>
+	import PageLinks from '$lib/components/PageLinks.svelte';
+
 	const pageTitle = 'Patterns';
 	const pageDescription = 'List of crochet patterns';
 
 	const { data } = $props();
 	let { page, pageCount, pageSize } = $derived(data.meta.pagination);
-	let minPage = $derived(Math.max(1, page - 2));
-	let maxPage = $derived(Math.min(pageCount, page + 2));
-	let pages = $derived(Array.from({ length: maxPage - minPage + 1 }, (_, i) => i + minPage));
-
-	const pageBaseLink = `/patterns?pageSize=${pageSize}&page=`;
 </script>
 
 <svelte:head>
@@ -37,4 +34,6 @@
 			</div>
 		{/each}
 	</div>
+
+	<PageLinks {page} {pageCount} {pageSize} pageRoute="patterns" />
 </div>

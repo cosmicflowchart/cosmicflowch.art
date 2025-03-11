@@ -4,7 +4,7 @@
 	let { children, data } = $props();
 </script>
 
-<header class="w-full h-28 md:h-40">
+<header class="w-full min-h-28 md:min-h-40">
 	<Navbar />
 </header>
 

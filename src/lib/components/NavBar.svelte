@@ -1,4 +1,5 @@
 <script>
+	import { slide } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/BannerLogo.svelte';
 
@@ -54,21 +55,23 @@
 	</div>
 
 	<!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-	<div
-		class="flex-col my-2 space-y-4 items-center md:flex md:space-y-0 md:flex-row md:space-x-10 md:mt-0"
-		class:flex={showMenu}
-		class:hidden={!showMenu}
-	>
-		{#each links as { title, href }}
-			<a
-				class="text-3xl text-cfc-purple-200 hover:text-cfc-purple-400 focus:text-cfc-purple-400"
-				class:font-extrabold={$page.url.pathname.startsWith(href)}
-				class:font-medium={!$page.url.pathname.startsWith(href)}
-				{href}
-				{title}
-			>
-				{title}
-			</a>
-		{/each}
-	</div>
+	{#if showMenu}
+		<div
+			class="flex flex-col my-2 space-y-4 items-center md:flex md:space-y-0 md:flex-row
+	md:space-x-10 md:mt-0"
+			transition:slide
+		>
+			{#each links as { title, href }}
+				<a
+					class="text-3xl text-cfc-purple-200 hover:text-cfc-purple-400 focus:text-cfc-purple-400"
+					class:font-extrabold={$page.url.pathname.startsWith(href)}
+					class:font-medium={!$page.url.pathname.startsWith(href)}
+					{href}
+					{title}
+				>
+					{title}
+				</a>
+			{/each}
+		</div>
+	{/if}
 </nav>

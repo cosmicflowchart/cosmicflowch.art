@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
-	export let lastUpdateYear = 2024;
+	export let lastUpdateYear = 2025;
 	export let pageLinks: { title: string; path: string }[] = [];
 	export let socialLinks: { iconName: string; url: string; label: string }[] = [];
 </script>

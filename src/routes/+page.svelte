@@ -3,7 +3,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 	const { data } = $props();
-	let lastUpdateYear = 2024;
+	let lastUpdateYear = 2025;
 
 	const pageDescription =
 		'A collection of crochet patterns and projects + a blog of my craft adventures';
@@ -17,12 +17,13 @@
 	<meta name="og:locale" content="en_US" />
 </svelte:head>
 
-<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)]">
+<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)] px-4 md:px-0">
 	<div class="flex justify-center my-16 mx-4">
 		<HomepageLogo class="max-w-md" />
 	</div>
 
 	<RichText
+		heading1Class="text-6xl text-center text-pretty my-4"
 		paragraphClass="max-w-screen-md text-2xl my-4 mx-auto"
 		unorderedListClass="max-w-screen-md text-2xl my-4 mx-auto list-disc pl-6"
 		richText={data.homepage.aboutMeText}

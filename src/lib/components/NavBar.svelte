@@ -54,13 +54,26 @@
 		</div>
 	</div>
 
+	<div
+		class="hidden md:flex my-2 space-y-4 items-center space-y-0 flex-row space-x-10 mt-0"
+		transition:slide
+	>
+		{#each links as { title, href }}
+			<a
+				class="text-3xl text-cfc-purple-200 hover:text-cfc-purple-400 focus:text-cfc-purple-400"
+				class:font-extrabold={$page.url.pathname.startsWith(href)}
+				class:font-medium={!$page.url.pathname.startsWith(href)}
+				{href}
+				{title}
+			>
+				{title}
+			</a>
+		{/each}
+	</div>
+
 	<!-- Mobile Menu open: "block", Menu closed: "hidden" -->
 	{#if showMenu}
-		<div
-			class="flex flex-col my-2 space-y-4 items-center md:flex md:space-y-0 md:flex-row
-	md:space-x-10 md:mt-0"
-			transition:slide
-		>
+		<div class="flex flex-col my-2 space-y-4 items-center md:hidden" transition:slide>
 			{#each links as { title, href }}
 				<a
 					class="text-3xl text-cfc-purple-200 hover:text-cfc-purple-400 focus:text-cfc-purple-400"

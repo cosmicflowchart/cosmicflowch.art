@@ -29,6 +29,15 @@
 		richText={data.homepage.aboutMeText}
 	/>
 
+	<h2 class="text-6xl text-center my-4">Upcoming Events</h2>
+	<div class="flex flex-col md:flex-row justify-center items-center">
+		{#each data.homepage.events as event}
+			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[4px] p-4">
+				<h3 class="text-2xl text-center my-4">{event.name}</h3>
+			</div>
+		{/each}
+	</div>
+
 	<div
 		class="flex flex-col space-y-4 justify-center items-center md:space-y-0 md:flex-row md:space-x-10 text-6xl my-8 mx-auto"
 	>

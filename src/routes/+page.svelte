@@ -30,10 +30,23 @@
 	/>
 
 	<h2 class="text-6xl text-center my-4">Upcoming Events</h2>
-	<div class="flex flex-col md:flex-row justify-center items-center">
+	<div class="grid grid-cols-1 lg:grid-cols-3 lg:space-x-4 space-y-2 lg:space-y-0 px-8 py-4">
 		{#each data.homepage.events as event}
-			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[4px] p-4">
-				<h3 class="text-2xl text-center my-4">{event.name}</h3>
+			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[4px] p-2">
+				<a href={event.url} target="_blank" rel="noopener noreferrer"
+					><h3 class="text-2xl text-center">{event.name}</h3></a
+				>
+				<p class="text-lg text-center mb-4">{event.location}</p>
+				{#each event.dates as date}
+					<p class="text-lg text-center">
+						{new Date(date.date).toLocaleDateString('en-SE', {
+							weekday: 'short',
+							month: 'long',
+							day: 'numeric'
+						})}
+						{date.startTime.slice(0, 5)}&#8211;{date.endTime.slice(0, 5)}
+					</p>
+				{/each}
 			</div>
 		{/each}
 	</div>

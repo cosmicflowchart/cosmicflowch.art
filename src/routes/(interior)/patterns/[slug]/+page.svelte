@@ -2,7 +2,6 @@
 	import RichText from '$lib/components/RichText.svelte';
 	const { data } = $props();
 	const { pattern } = data;
-	console.log(JSON.stringify(pattern.description, null, 2));
 </script>
 
 <svelte:head>
@@ -40,8 +39,8 @@
 			{#each step.images as image}
 				<div class="p-4">
 					<img
-						height={500}
-						width={(image.width * 500) / image.height}
+						height={200}
+						width={(image.width * 200) / image.height}
 						src={image.formats.small.url}
 						alt={image.alt}
 					/>

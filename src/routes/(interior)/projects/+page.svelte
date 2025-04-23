@@ -23,16 +23,20 @@
 			<div class="flex justify-center px-2 py-6 m-4 bg-cfc-purple-800 rounded-xl">
 				<a
 					href={`/projects/${project.sku.toLowerCase()}/${project.slug}`}
+					class="grid grid-cols-1 justify-center content-between space-y-4"
+					class:md:content-end={!project.images}
 					data-sveltekit-preload-data="hover"
 				>
-					<img
-						class="mx-auto rounded-xl"
-						height={200}
-						width={(project.images[0].width * 200) / project.images[0].height}
-						src={project.images[0].formats.thumbnail.url}
-						alt={project.images[0].alt}
-					/>
-					<p class="text-2xl text-center mt-4">{project.title}</p>
+					{#if project.images}
+						<img
+							class="mx-auto rounded-xl"
+							height={200}
+							width={(project.images[0].width * 200) / project.images[0].height}
+							src={project.images[0].formats.thumbnail.url}
+							alt={project.images[0].alt}
+						/>
+					{/if}
+					<p class="text-2xl text-center">{project.title}</p>
 				</a>
 			</div>
 		{/each}

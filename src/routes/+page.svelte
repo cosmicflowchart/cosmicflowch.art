@@ -17,9 +17,23 @@
 	<meta name="og:locale" content="en_US" />
 </svelte:head>
 
-<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)] px-4 md:px-0">
+<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)] px-4">
 	<div class="flex justify-center my-16 mx-4">
 		<HomepageLogo class="max-w-md" />
+	</div>
+
+	<div class="flex justify-center my-8 space-x-8">
+		{#each data.footer.socialLinks as link}
+			<a
+				href={link.url}
+				target="_blank"
+				rel="nofollow me"
+				aria-label={link.label}
+				title={link.label}
+			>
+				<Icon iconName={link.iconName} class="w-24 h-24" />
+			</a>
+		{/each}
 	</div>
 
 	<RichText
@@ -30,8 +44,14 @@
 	/>
 
 	<h2 class="text-6xl text-center my-4">Upcoming Events</h2>
-	<div class="grid grid-cols-1 lg:grid-cols-3 lg:space-x-4 space-y-2 lg:space-y-0 px-8 py-4">
-		{#each data.homepage.events as event}
+	<div
+		class="grid grid-cols-1 md:space-x-4 space-y-2 md:space-y-0 px-8
+	py-4 mx-auto max-w-screen-md"
+		class:md:grid-cols-2={data.homepage.events.length == 2}
+		class:md:max-w-screen-lg={data.homepage.events.length >= 3}
+		class:md:grid-cols-3={data.homepage.events.length >= 3}
+	>
+		{#each data.homepage.events.slice(0, 3) as event}
 			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[4px] p-2">
 				<a href={event.url} target="_blank" rel="noopener noreferrer"
 					><h3 class="text-2xl text-center">{event.name}</h3></a
@@ -57,20 +77,6 @@
 		<a href="/projects">Projects</a>
 		<a href="/patterns">Patterns</a>
 		<a href="/blog">Blog</a>
-	</div>
-
-	<div class="flex justify-center my-8">
-		{#each data.footer.socialLinks as link}
-			<a
-				href={link.url}
-				target="_blank"
-				rel="nofollow me"
-				aria-label={link.label}
-				title={link.label}
-			>
-				<Icon iconName={link.iconName} class="w-24 h-24" />
-			</a>
-		{/each}
 	</div>
 </main>
 

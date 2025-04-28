@@ -1,7 +1,11 @@
 <script>
+	import HomepageCard from '$lib/components/HomepageCard.svelte';
+	import HomepageCardContainer from '$lib/components/HomepageCardContainer.svelte';
 	import HomepageLogo from '$lib/components/HomepageLogo.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import PostLink from '$lib/components/PostLink.svelte';
 	import RichText from '$lib/components/RichText.svelte';
+
 	const { data } = $props();
 	let lastUpdateYear = 2025;
 
@@ -44,40 +48,56 @@
 	/>
 
 	<h2 class="text-6xl text-center my-4">Upcoming Events</h2>
-	<div
-		class="grid grid-cols-1 md:space-x-4 space-y-2 md:space-y-0 px-8
-	py-4 mx-auto max-w-screen-md"
-		class:md:grid-cols-2={data.homepage.events.length == 2}
-		class:md:max-w-screen-lg={data.homepage.events.length >= 3}
-		class:md:grid-cols-3={data.homepage.events.length >= 3}
-	>
+	<HomepageCardContainer count={data.homepage.events.length}>
 		{#each data.homepage.events.slice(0, 3) as event}
-			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[2px] p-2">
-				<a href={event.url} target="_blank" rel="noopener noreferrer"
-					><h3 class="text-2xl text-center">{event.name}</h3></a
-				>
-				<p class="text-lg text-center mb-4">{event.location}</p>
-				{#each event.dates as date}
-					<p class="text-lg text-center">
-						{new Date(date.date).toLocaleDateString('en-SE', {
-							weekday: 'short',
-							month: 'long',
-							day: 'numeric'
-						})}
-						{date.startTime.slice(0, 5)}&#8211;{date.endTime.slice(0, 5)}
-					</p>
-				{/each}
-			</div>
+			<HomepageCard>
+				<a href={event.url} target="_blank" rel="noopener noreferrer">
+					<h3 class="text-2xl text-center">{event.name}</h3>
+					<p class="text-lg text-center mb-4">{event.location}</p>
+					{#each event.dates as date}
+						<p class="text-lg text-center">
+							{new Date(date.date).toLocaleDateString('en-SE', {
+								weekday: 'short',
+								month: 'long',
+								day: 'numeric'
+							})}
+							{date.startTime.slice(0, 5)}&#8211;{date.endTime.slice(0, 5)}
+						</p>
+					{/each}
+				</a>
+			</HomepageCard>
 		{/each}
-	</div>
+	</HomepageCardContainer>
 
-	<div
-		class="flex flex-col space-y-4 justify-center items-center md:space-y-0 md:flex-row md:space-x-10 text-6xl my-8 mx-auto"
-	>
-		<a href="/projects">Projects</a>
-		<a href="/patterns">Patterns</a>
-		<a href="/blog">Blog</a>
-	</div>
+	<h2 class="text-6xl text-center my-4"><a href="/projects">Craft Projects</a></h2>
+	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
+		These are some of the items I've made and maybe even sold at a local market.
+	</p>
+	<HomepageCardContainer count={data.homepage.featuredProjects.length}>
+		{#each data.homepage.featuredProjects as project}
+			<HomepageCard>
+				<PostLink href={`/projects/${project.sku.toLowerCase()}/${project.slug}`} post={project} />
+			</HomepageCard>
+		{/each}
+	</HomepageCardContainer>
+	<p class="text-2xl text-center my-4 mx-auto">
+		<a href="/projects">More Projects > </a>
+	</p>
+
+	<h2 class="text-6xl text-center my-4"><a href="/patterns">Patterns</a></h2>
+	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
+		Want to make some these yourself? Check out my patterns!
+	</p>
+	<HomepageCardContainer count={data.homepage.featuredPatterns.length}>
+		{#each data.homepage.featuredPatterns as pattern}
+			<HomepageCard>
+				<PostLink href={`/patterns/${pattern.slug}`} post={pattern} />
+			</HomepageCard>
+		{/each}
+	</HomepageCardContainer>
+	<p class="text-2xl text-center my-4 mx-auto">
+		<a href="/patterns">More Patterns > </a>
+	</p>
 </main>
 
 <footer class="max-w-screen-xl mx-auto max-w-screen-xl mx-auto p-4">
@@ -99,7 +119,7 @@
 	</p>
 </footer>
 
-<style>
+<style lang="postcss">
 	a {
 		@apply hover:text-cfc-purple-400 focus:text-cfc-purple-400;
 	}

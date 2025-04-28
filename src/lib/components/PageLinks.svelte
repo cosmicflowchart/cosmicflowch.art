@@ -39,6 +39,6 @@
 
 <style lang="postcss">
 	#pagination > div {
-		@apply min-w-8 mx-2 p-2 bg-cfc-purple-800 rounded-xl flex items-center justify-center;
+		@apply min-w-8 mx-2 p-2 bg-cfc-purple-700/25 rounded-xl flex items-center justify-center;
 	}
 </style>

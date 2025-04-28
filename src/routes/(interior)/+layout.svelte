@@ -8,7 +8,10 @@
 	<Navbar />
 </header>
 
-<main class="w-full min-h-[calc(100vh-260px)] md:min-h-[calc(100vh-280px)] mt-0 py-4">
+<main
+	class="w-full min-h-[calc(100vh-260px)] md:min-h-[calc(100vh-280px)] mt-0 py-4
+text-white bg-cfc-purple-900/75 backdrop-blur-[2px]"
+>
 	<div class="max-w-screen-xl mx-auto">
 		{@render children()}
 	</div>
@@ -17,11 +20,3 @@
 <footer class="w-full h-37 md:h-30">
 	<FooterContent pageLinks={data.footer.pageLinks} socialLinks={data.footer.socialLinks} />
 </footer>
-
-<style lang="postcss">
-	main {
-		color: var(--foreground);
-		background: var(--background-start)
-			linear-gradient(to bottom right, transparent, var(--background-end));
-	}
-</style>

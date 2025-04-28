@@ -52,7 +52,7 @@
 		class:md:grid-cols-3={data.homepage.events.length >= 3}
 	>
 		{#each data.homepage.events.slice(0, 3) as event}
-			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[4px] p-2">
+			<div class="rounded-2xl bg-cfc-purple-900/25 backdrop-blur-[2px] p-2">
 				<a href={event.url} target="_blank" rel="noopener noreferrer"
 					><h3 class="text-2xl text-center">{event.name}</h3></a
 				>

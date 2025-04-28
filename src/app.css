@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
 	@font-face {
 		font-family: 'Potra';
@@ -10,128 +9,127 @@
 		font-weight: normal;
 		font-display: swap;
 	}
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Thin'), url('/fonts/exo-2-0/Exo2.0-Thin.otf');
-    font-weight: 100;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Extra Light'), url('/fonts/exo-2-0/Exo2.0-ExtraLight.otf');
-    font-weight: 200;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Light'), url('/fonts/exo-2-0/Exo2.0-Light.otf');
-    font-weight: 300;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Normal'), url('/fonts/exo-2-0/Exo2.0-Regular.otf');
-    font-weight: 400;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Medium'), url('/fonts/exo-2-0/Exo2.0-Medium.otf');
-    font-weight: 500;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Semi Bold'), url('/fonts/exo-2-0/Exo2.0-SemiBold.otf');
-    font-weight: 600;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Bold'), url('/fonts/exo-2-0/Exo2.0-Bold.otf');
-    font-weight: 700;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Extra Bold'), url('/fonts/exo-2-0/Exo2.0-ExtraBold.otf');
-    font-weight: 800;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Black'), url('/fonts/exo-2-0/Exo2.0-Black.otf');
-    font-weight: 900;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Thin Italic'), url('/fonts/exo-2-0/Exo2.0-ThinItalic.otf');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Extra Light Italic'), url('/fonts/exo-2-0/Exo2.0-ExtraLightItalic.otf');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Light Italic'), url('/fonts/exo-2-0/Exo2.0-LightItalic.otf');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Normal Italic'), url('/fonts/exo-2-0/Exo2.0-RegularItalic.otf');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Medium Italic'), url('/fonts/exo-2-0/Exo2.0-MediumItalic.otf');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Semi Bold Italic'), url('/fonts/exo-2-0/Exo2.0-SemiBoldItalic.otf');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Bold Italic'), url('/fonts/exo-2-0/Exo2.0-BoldItalic.otf');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Extra Bold Italic'), url('/fonts/exo-2-0/Exo2.0-ExtraBoldItalic.otf');
-    font-weight: 800;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Exo2';
-    src: local('Exo 2.0 Black Italic'), url('/fonts/exo-2-0/Exo2.0-BlackItalic.otf');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-  }
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Thin'), url('/fonts/exo-2-0/Exo2.0-Thin.otf');
+		font-weight: 100;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Extra Light'), url('/fonts/exo-2-0/Exo2.0-ExtraLight.otf');
+		font-weight: 200;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Light'), url('/fonts/exo-2-0/Exo2.0-Light.otf');
+		font-weight: 300;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Normal'), url('/fonts/exo-2-0/Exo2.0-Regular.otf');
+		font-weight: 400;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Medium'), url('/fonts/exo-2-0/Exo2.0-Medium.otf');
+		font-weight: 500;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Semi Bold'), url('/fonts/exo-2-0/Exo2.0-SemiBold.otf');
+		font-weight: 600;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Bold'), url('/fonts/exo-2-0/Exo2.0-Bold.otf');
+		font-weight: 700;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Extra Bold'), url('/fonts/exo-2-0/Exo2.0-ExtraBold.otf');
+		font-weight: 800;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Black'), url('/fonts/exo-2-0/Exo2.0-Black.otf');
+		font-weight: 900;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Thin Italic'), url('/fonts/exo-2-0/Exo2.0-ThinItalic.otf');
+		font-weight: 100;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Extra Light Italic'), url('/fonts/exo-2-0/Exo2.0-ExtraLightItalic.otf');
+		font-weight: 200;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Light Italic'), url('/fonts/exo-2-0/Exo2.0-LightItalic.otf');
+		font-weight: 300;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Normal Italic'), url('/fonts/exo-2-0/Exo2.0-Italic.otf');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Medium Italic'), url('/fonts/exo-2-0/Exo2.0-MediumItalic.otf');
+		font-weight: 500;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Semi Bold Italic'), url('/fonts/exo-2-0/Exo2.0-SemiBoldItalic.otf');
+		font-weight: 600;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Bold Italic'), url('/fonts/exo-2-0/Exo2.0-BoldItalic.otf');
+		font-weight: 700;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Extra Bold Italic'), url('/fonts/exo-2-0/Exo2.0-ExtraBoldItalic.otf');
+		font-weight: 800;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exo2';
+		src: local('Exo 2.0 Black Italic'), url('/fonts/exo-2-0/Exo2.0-BlackItalic.otf');
+		font-weight: 900;
+		font-style: italic;
+		font-display: swap;
+	}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }
-

@@ -28,7 +28,7 @@
 					height={500}
 					width={(image.width * 500) / image.height}
 					src={image.formats.small.url}
-					alt={image.alt}
+					alt={image.alternativeText}
 				/>
 			</div>
 		{/each}

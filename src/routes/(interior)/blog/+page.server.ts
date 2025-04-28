@@ -5,7 +5,7 @@ export const load = async ({ url }) => {
 	const pageSize = url.searchParams.get('pageSize') || 12;
 
 	const response = await fetch(
-		`${STRAPI_API_URL}/api/patterns` +
+		`${STRAPI_API_URL}/api/blog-posts` +
 			`?pagination[page]=${page}` +
 			`&pagination[pageSize]=${pageSize}` +
 			'&sort=title' +
@@ -19,9 +19,9 @@ export const load = async ({ url }) => {
 		}
 	);
 
-	const patterns = await response.json();
+	const blogPosts = await response.json();
 	return {
-		patterns: patterns.data,
-		meta: patterns.meta
+		posts: blogPosts.data,
+		meta: blogPosts.meta
 	};
 };

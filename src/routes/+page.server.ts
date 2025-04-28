@@ -22,8 +22,21 @@ export const load = async () => {
 	});
 	const footer = await footerResponse.json();
 
+	const blogResponse = await fetch(
+		`${STRAPI_API_URL}/api/blog-posts?pagination[pageSize]=3&sort=createdAt&populate=*`,
+		{
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${STRAPI_API_TOKEN}`
+			}
+		}
+	);
+	const posts = await blogResponse.json();
+
 	return {
 		footer: footer.data,
-		homepage: homepage.data
+		homepage: homepage.data,
+		posts: posts.data
 	};
 };

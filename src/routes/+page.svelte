@@ -98,6 +98,21 @@
 	<p class="text-2xl text-center my-4 mx-auto">
 		<a href="/patterns">More Patterns > </a>
 	</p>
+
+	<h2 class="text-6xl text-center my-4"><a href="/blog">Blog</a></h2>
+	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
+		What have I been up to?
+	</p>
+	<HomepageCardContainer count={data.posts.length}>
+		{#each data.posts as post}
+			<HomepageCard>
+				<PostLink href={`/blog/${post.slug}`} {post} showDescription={true} showCreatedAt={true} />
+			</HomepageCard>
+		{/each}
+	</HomepageCardContainer>
+	<p class="text-2xl text-center my-4 mx-auto">
+		<a href="/blog">More Posts > </a>
+	</p>
 </main>
 
 <footer class="max-w-screen-xl mx-auto max-w-screen-xl mx-auto p-4">

@@ -26,7 +26,7 @@
 					height={500}
 					width={(image.width * 500) / image.height}
 					src={image.formats.small.url}
-					alt={image.alt}
+					alt={image.alternativeText}
 				/>
 			</div>
 		{/each}
@@ -42,7 +42,7 @@
 						height={200}
 						width={(image.width * 200) / image.height}
 						src={image.formats.small.url}
-						alt={image.alt}
+						alt={image.alternativeText}
 					/>
 				</div>
 			{/each}
@@ -62,7 +62,7 @@
 							height={500}
 							width={(image.width * 500) / image.height}
 							src={image.formats.small.url}
-							alt={image.alt}
+							alt={image.alternativeText}
 						/>
 					</div>
 				{/each}

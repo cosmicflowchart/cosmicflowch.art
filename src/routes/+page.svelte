@@ -7,7 +7,7 @@
 	import RichText from '$lib/components/RichText.svelte';
 
 	const { data } = $props();
-	let lastUpdateYear = 2025;
+	let lastUpdateYear = new Date().getFullYear();
 
 	const pageDescription =
 		'A collection of crochet patterns and projects + a blog of my craft adventures';

@@ -42,7 +42,7 @@
 
 	<RichText
 		heading1Class="text-6xl text-center text-pretty my-4"
-		paragraphClass="max-w-screen-md text-2xl my-4 mx-auto"
+		paragraphClass="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto"
 		unorderedListClass="max-w-screen-md text-2xl my-4 mx-auto list-disc pl-6"
 		richText={data.homepage.aboutMeText}
 	/>

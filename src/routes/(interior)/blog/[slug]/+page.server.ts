@@ -1,4 +1,4 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { STRAPI_API_URL, STRAPI_API_TOKEN } from '$env/static/private';
 
 export const load = async ({ params }) => {

@@ -23,7 +23,7 @@ export const load = async () => {
 	const footer = await footerResponse.json();
 
 	const blogResponse = await fetch(
-		`${STRAPI_API_URL}/api/blog-posts?pagination[pageSize]=3&sort=createdAt&populate=*`,
+		`${STRAPI_API_URL}/api/blog-posts?pagination[pageSize]=3&sort=createdAt:desc&populate=*`,
 		{
 			method: 'GET',
 			headers: {

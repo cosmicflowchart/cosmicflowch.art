@@ -8,7 +8,7 @@ export const load = async ({ url }) => {
 		`${STRAPI_API_URL}/api/blog-posts` +
 			`?pagination[page]=${page}` +
 			`&pagination[pageSize]=${pageSize}` +
-			'&sort=title' +
+			'&sort=createdAt:desc' +
 			'&populate=*',
 		{
 			method: 'GET',

@@ -26,7 +26,7 @@
 	{/if}
 </svelte:head>
 
-<div class="max-w-screen-xl mx-auto px-4">
+<div class="max-w-screen-lg mx-auto px-4">
 	<h1 class="text-6xl text-center my-4">{post.title}</h1>
 	<p class="text-md text-center italic">
 		{createdDate}
@@ -37,7 +37,7 @@
 	<RichText richText={post.description} />
 
 	{#each post.paragraph as paragraph}
-		<RichText richText={paragraph.text} />
+		<RichText heading2Class="text-4xl my-4" richText={paragraph.text} />
 		<div class="flex flex-wrap justify-center px-4">
 			{#if paragraph.image}
 				<div class="p-4">

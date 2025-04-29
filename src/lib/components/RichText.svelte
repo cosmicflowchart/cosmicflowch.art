@@ -24,12 +24,12 @@
 
 	export let richText: RichTextElement[];
 	export let linkClass = 'text-cfc-purple-200 hover:text-cfc-purple-400';
-	export let heading1Class = 'text-6xl text-center my-4';
-	export let heading2Class = 'text-4xl text-center my-4';
-	export let heading3Class = 'text-2xl text-center my-4';
-	export let orderedListClass = 'max-w-screen-md text-xl my-4 mx-auto list-decimal pl-6';
-	export let paragraphClass = 'max-w-screen-md text-xl my-4 mx-auto';
-	export let unorderedListClass = 'max-w-screen-md text-xl my-4 mx-auto list-disc pl-6';
+	export let heading1Class = 'text-6xl my-4';
+	export let heading2Class = 'text-4xl my-4';
+	export let heading3Class = 'text-2xl my-4';
+	export let orderedListClass = 'text-xl my-4 mx-auto list-decimal pl-6';
+	export let paragraphClass = 'text-xl my-4 mx-auto';
+	export let unorderedListClass = 'text-xl my-4 mx-auto list-disc pl-6';
 </script>
 
 {#each richText as element}

@@ -21,7 +21,7 @@
 	<meta name="og:locale" content="en_US" />
 </svelte:head>
 
-<main class="max-w-screen-xl mx-auto min-h-[calc(100vh-120px)] px-4">
+<main class="max-w-screen-lg mx-auto min-h-[calc(100vh-120px)] px-4">
 	<div class="flex justify-center my-16 mx-4">
 		<HomepageLogo class="max-w-md" />
 	</div>
@@ -42,8 +42,8 @@
 
 	<RichText
 		heading1Class="text-6xl text-center text-pretty my-4"
-		paragraphClass="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto"
-		unorderedListClass="max-w-screen-md text-2xl my-4 mx-auto list-disc pl-6"
+		paragraphClass="text-2xl text-center text-pretty my-4 mx-auto"
+		unorderedListClass="text-2xl my-4 mx-auto list-disc pl-6"
 		richText={data.homepage.aboutMeText}
 	/>
 
@@ -70,7 +70,7 @@
 	</HomepageCardContainer>
 
 	<h2 class="text-6xl text-center my-4"><a href="/projects">Craft Projects</a></h2>
-	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
+	<p class="text-2xl text-center text-pretty my-4 mx-auto">
 		These are some of the items I've made and maybe even sold at a local market.
 	</p>
 	<HomepageCardContainer count={data.homepage.featuredProjects.length}>
@@ -85,7 +85,7 @@
 	</p>
 
 	<h2 class="text-6xl text-center my-4"><a href="/patterns">Patterns</a></h2>
-	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
+	<p class="text-2xl text-center text-pretty my-4 mx-auto">
 		Want to make some these yourself? Check out my patterns!
 	</p>
 	<HomepageCardContainer count={data.homepage.featuredPatterns.length}>
@@ -100,9 +100,7 @@
 	</p>
 
 	<h2 class="text-6xl text-center my-4"><a href="/blog">Blog</a></h2>
-	<p class="max-w-screen-md text-2xl text-center text-pretty my-4 mx-auto">
-		What have I been up to?
-	</p>
+	<p class="text-2xl text-center text-pretty my-4 mx-auto">What have I been up to?</p>
 	<HomepageCardContainer count={data.posts.length}>
 		{#each data.posts as post}
 			<HomepageCard>

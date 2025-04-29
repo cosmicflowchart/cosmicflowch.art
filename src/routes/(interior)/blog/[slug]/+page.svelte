@@ -1,5 +1,6 @@
 <script>
 	import RichText from '$lib/components/RichText.svelte';
+	import { text } from '@sveltejs/kit';
 	const { data } = $props();
 	const { post } = data;
 
@@ -36,20 +37,23 @@
 	</p>
 	<RichText richText={post.description} />
 
-	{#each post.paragraph as paragraph}
-		<RichText heading2Class="text-4xl my-4" richText={paragraph.text} />
-		<div class="flex flex-wrap justify-center px-4">
-			{#if paragraph.image}
-				<div class="p-4">
-					<img
-						class="rounded-xl"
-						height={400}
-						width={(paragraph.image.width * 400) / paragraph.image.height}
-						src={paragraph.image.url}
-						alt={paragraph.image.alternativeText}
-					/>
+	{#each post.content as block}
+		{#if block.__component === 'content.text-block'}
+			<RichText heading2Class="text-4xl my-4" richText={block.text} />
+		{:else if block.__component === 'content.image'}
+			{#each block.images as image}
+				<div class="flex flex-wrap justify-center px-4">
+					<div class="p-4">
+						<img
+							class="rounded-xl"
+							height={400}
+							width={(image.width * 400) / image.height}
+							src={image.url}
+							alt={image.alternativeText}
+						/>
+					</div>
 				</div>
-			{/if}
-		</div>
+			{/each}
+		{/if}
 	{/each}
 </div>

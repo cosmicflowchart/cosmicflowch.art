@@ -2,7 +2,11 @@ import { STRAPI_API_URL, STRAPI_API_TOKEN } from '$env/static/private';
 
 export const load = async () => {
 	const homepageResponse = await fetch(
-		`${STRAPI_API_URL}/api/homepage?populate[0]=events.dates&populate[1]=featuredProjects.images&populate[2]=featuredPatterns.images`,
+		`${STRAPI_API_URL}/api/homepage` +
+			'?populate[0]=events.dates' +
+			'&populate[1]=featuredProjects.images' +
+			'&populate[2]=featuredPatterns.images' +
+			'&populate[3]=aboutMePicture',
 		{
 			method: 'GET',
 			headers: {

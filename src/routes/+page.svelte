@@ -19,6 +19,9 @@
 	<meta name="og:description" content={pageDescription} />
 	<meta name="og:title" content="Cosmic Flowchart" />
 	<meta name="og:locale" content="en_US" />
+	{#if data.homepage.aboutMePicture}
+		<meta name="og:image" content={data.homepage.aboutMePicture.url} />
+	{/if}
 </svelte:head>
 
 <main class="max-w-screen-lg mx-auto min-h-[calc(100vh-120px)] px-4">

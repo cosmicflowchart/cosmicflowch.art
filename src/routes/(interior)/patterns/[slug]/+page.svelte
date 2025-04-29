@@ -11,7 +11,7 @@
 	<meta name="og:title" content="{pattern.title} | Cosmic Flowchart" />
 	<meta name="og:locale" content="en_US" />
 	{#if pattern.images}
-		<meta name="og:image" content={pattern.images[0].formats.thumbnail.url} />
+		<meta name="og:image" content={pattern.images[0].url} />
 	{/if}
 </svelte:head>
 

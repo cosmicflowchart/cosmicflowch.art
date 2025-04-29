@@ -10,7 +10,7 @@
 	<meta name="og:title" content="{data.project.title} | Cosmic Flowchart" />
 	<meta name="og:locale" content="en_US" />
 	{#if data.project.images}
-		<meta name="og:image" content={data.project.images[0].formats.thumbnail.url} />
+		<meta name="og:image" content={data.project.images[0].url} />
 	{/if}
 </svelte:head>
 

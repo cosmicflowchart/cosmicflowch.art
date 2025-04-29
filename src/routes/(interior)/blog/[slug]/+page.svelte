@@ -23,7 +23,7 @@
 	<meta name="og:title" content="{post.title} | Cosmic Flowchart" />
 	<meta name="og:locale" content="en_US" />
 	{#if post.image}
-		<meta name="og:image" content={post.image.formats.thumbnail.url} />
+		<meta name="og:image" content={post.image.url} />
 	{/if}
 </svelte:head>
 

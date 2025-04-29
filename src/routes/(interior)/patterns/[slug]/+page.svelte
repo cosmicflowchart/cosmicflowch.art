@@ -23,6 +23,7 @@
 		{#each pattern.images as image}
 			<div class="p-4">
 				<img
+					class="rounded-xl"
 					height={500}
 					width={(image.width * 500) / image.height}
 					src={image.formats.small.url}
@@ -39,6 +40,7 @@
 			{#each step.images as image}
 				<div class="p-4">
 					<img
+						class="rounded-xl"
 						height={200}
 						width={(image.width * 200) / image.height}
 						src={image.formats.small.url}
@@ -59,8 +61,9 @@
 				{#each variant.images as image}
 					<div class="p-4">
 						<img
-							height={500}
-							width={(image.width * 500) / image.height}
+							class="rounded-xl"
+							height={200}
+							width={(image.width * 200) / image.height}
 							src={image.formats.small.url}
 							alt={image.alternativeText}
 						/>

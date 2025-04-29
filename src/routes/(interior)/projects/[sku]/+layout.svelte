@@ -25,6 +25,7 @@
 		{#each data.project.images as image}
 			<div class="p-4">
 				<img
+					class="rounded-xl"
 					height={500}
 					width={(image.width * 500) / image.height}
 					src={image.formats.small.url}

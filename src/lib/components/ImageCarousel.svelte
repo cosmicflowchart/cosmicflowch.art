@@ -12,9 +12,10 @@
 		images.length !== 2
 			? [images[images.length - 1], ...images.slice(0, images.length - 1)]
 			: [
-					...images,
-					{ ...images[0], id: `${images[0].id}_1}` },
-					{ ...images[1], id: `${images[1].id}_2}` }
+					images[1],
+					images[0],
+					{ ...images[1], id: `${images[1].id}_2}` },
+					{ ...images[0], id: `${images[0].id}_2}` }
 				];
 
 	const nextImage = () => {

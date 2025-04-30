@@ -1,5 +1,7 @@
 <script>
+	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import RichText from '$lib/components/RichText.svelte';
+
 	const { data } = $props();
 	const { pattern } = data;
 </script>
@@ -51,25 +53,7 @@
 		</div>
 	{/each}
 
-	{#if pattern.variants.length > 0}
-		<h2 class="text-4xl text-center my-4">Variants</h2>
-		{#each pattern.variants as variant}
-			<h3 class="text-2xl text-center my-4">{variant.title}</h3>
-			<RichText richText={variant.description} />
-
-			<div class="flex flex-wrap justify-center px-4">
-				{#each variant.images as image}
-					<div class="p-4">
-						<img
-							class="rounded-xl"
-							height={200}
-							width={(image.width * 200) / image.height}
-							src={image.formats.small.url}
-							alt={image.alternativeText}
-						/>
-					</div>
-				{/each}
-			</div>
-		{/each}
-	{/if}
+	{#each pattern.content as block}
+		<ContentBlock {block} />
+	{/each}
 </div>

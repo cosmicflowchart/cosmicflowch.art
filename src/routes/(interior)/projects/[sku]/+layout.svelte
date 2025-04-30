@@ -1,4 +1,5 @@
 <script>
+	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 	const { children, data } = $props();
 </script>
@@ -34,5 +35,10 @@
 			</div>
 		{/each}
 	</div>
+
+	{#each data.project.content as block}
+		<ContentBlock {block} />
+	{/each}
+
 	{@render children()}
 </div>

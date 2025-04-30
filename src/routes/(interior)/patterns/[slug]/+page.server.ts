@@ -5,9 +5,10 @@ export const load = async ({ params }) => {
 	const response = await fetch(
 		`${STRAPI_API_URL}/api/patterns?` +
 			`filters[slug][$eqi]=${params.slug}` +
-			'&populate[0]=variants' +
-			'&populate[1]=steps.images' +
-			'&populate[2]=images',
+			'&populate[0]=content.image' +
+			'&populate[1]=content.images' +
+			'&populate[2]=steps.images' +
+			'&populate[3]=images',
 		{
 			method: 'GET',
 			headers: {

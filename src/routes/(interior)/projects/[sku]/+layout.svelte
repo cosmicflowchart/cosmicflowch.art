@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import RichText from '$lib/components/RichText.svelte';
+	import { selectImageUrlForSize } from '$lib/utils';
 	const { children, data } = $props();
 </script>
 
@@ -29,7 +30,7 @@
 					class="rounded-xl"
 					height={500}
 					width={(image.width * 500) / image.height}
-					src={image.formats.small.url}
+					src={selectImageUrlForSize(image, { width: 500 })}
 					alt={image.alternativeText}
 				/>
 			</div>

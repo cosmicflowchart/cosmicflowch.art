@@ -1,9 +1,12 @@
 <script>
+	import { selectImageUrlForSize } from '$lib/utils';
+
 	export let href, post;
 	export let showDescription = false;
 	export let showCreatedAt = false;
 
 	let image = post.image;
+	let imageHeight = 150;
 	if (post.images) {
 		image = post.images[0];
 	}
@@ -18,9 +21,9 @@
 	{#if image}
 		<img
 			class="mx-auto rounded-xl"
-			height={200}
-			width={(image.width * 200) / image.height}
-			src={image.formats.thumbnail.url}
+			height={image}
+			width={(image.width * imageHeight) / image.height}
+			src={selectImageUrlForSize(image, { height: imageHeight })}
 			alt={image.alternativeText}
 		/>
 	{/if}

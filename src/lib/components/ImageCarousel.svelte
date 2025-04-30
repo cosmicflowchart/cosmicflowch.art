@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Image } from '$lib/types';
+	import { selectImageUrlForSize } from '$lib/utils';
 	import { flip } from 'svelte/animate';
 
 	export let images: Image[] = [];
@@ -41,7 +42,7 @@
 				alt={image.alternativeText}
 				class="flex relative -left-full"
 				class:opacity-0={index == displayImages.length - 1}
-				src={image.url}
+				src={selectImageUrlForSize(image, { width })}
 				height={(image.height * width) / image.width}
 				{width}
 				style="width: {width}px; height: {(image.height * width) / image.width}px"

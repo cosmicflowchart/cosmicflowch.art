@@ -19,28 +19,33 @@ export type Image = {
 	alternativeText: string;
 	height: number;
 	id: number | string;
+	size: number;
 	url: string;
 	width: number;
 	formats?: {
 		small?: {
+			height: number;
+			size: number;
 			url: string;
 			width: number;
-			height: number;
 		};
 		medium?: {
-			url: string;
-			width: number;
 			height: number;
+			size: number;
+			width: number;
+			url: string;
 		};
 		large?: {
+			height: number;
+			size: number;
 			url: string;
 			width: number;
-			height: number;
 		};
 		thumbnail?: {
+			height: number;
+			size: number;
 			url: string;
 			width: number;
-			height: number;
 		};
 	};
 };

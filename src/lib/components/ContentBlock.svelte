@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { ContentBlock, Image } from '$lib/types';
+	import type { ContentBlock } from '$lib/types';
 
 	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import ImageFlexbox from '$lib/components/ImageFlexbox.svelte';
 	import ImageGrid from '$lib/components/ImageGrid.svelte';
 	import RichText from '$lib/components/RichText.svelte';
+	import { selectImageUrlForSize } from '$lib/utils';
 
 	export let block: ContentBlock;
 	export let defaultImageHeight = 500;
@@ -15,18 +16,25 @@
 {#if block.__component === 'content.text-block'}
 	<RichText heading2Class="text-4xl my-4" richText={block.text} />
 {:else if block.__component === 'content.image'}
-	<div class="flex flex-wrap justify-center px-4">
-		<div class="p-4">
-			<img
-				class="rounded-xl"
-				height={block.height || defaultImageHeight}
-				width={block.width ||
-					(block.image.width * (block.height || defaultImageHeight)) / block.image.height}
-				src={block.image.url}
-				alt={block.image.alternativeText}
-			/>
+	{#if block.image}
+		<div class="flex flex-wrap justify-center px-4">
+			<div class="p-4">
+				<img
+					class="rounded-xl"
+					height={block.height || defaultImageHeight}
+					width={block.width ||
+						(block.image.width * (block.height || defaultImageHeight)) / block.image.height}
+					src={selectImageUrlForSize(block.image, {
+						height: block.height || defaultImageHeight,
+						width:
+							block.width ||
+							(block.image.width * (block.height || defaultImageHeight)) / block.image.height
+					})}
+					alt={block.image.alternativeText}
+				/>
+			</div>
 		</div>
-	</div>
+	{/if}
 {:else if block.__component === 'content.image-carousel'}
 	<div class="flex justify-center py-4">
 		<ImageCarousel images={block.images} width={block.width || defaultImageWidth} />

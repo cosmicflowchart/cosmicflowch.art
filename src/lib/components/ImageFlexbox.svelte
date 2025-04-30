@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Image } from '$lib/types';
+	import { selectImageUrlForSize } from '$lib/utils';
 
 	export let images: Image[] = [];
 	export let imageWidth: number | null = null;
@@ -34,7 +35,7 @@
 				height={getHeight(image)}
 				width={getWidth(image)}
 				style="height: {getHeight(image)}px; width: {getWidth(image)}px;"
-				src={image.url}
+				src={selectImageUrlForSize(image, { height: getHeight(image), width: getWidth(image) })}
 				alt={image.alternativeText}
 			/>
 		</div>

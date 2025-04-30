@@ -7,7 +7,7 @@ export const load = async ({ params }) => {
 			`?filters[sku][$eqi]=${params.sku}` +
 			'&populate[0]=content.image' +
 			'&populate[1]=content.images' +
-			'&populate[2]=images',
+			'&populate[2]=image',
 		{
 			method: 'GET',
 			headers: {

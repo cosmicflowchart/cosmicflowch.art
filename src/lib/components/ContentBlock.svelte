@@ -9,7 +9,7 @@
 
 	export let block: ContentBlock;
 	export let defaultImageHeight = 500;
-	export let defaultImageWidth = 500;
+	export let defaultImageWidth = 400;
 	export let defaultColumns = 4;
 </script>
 

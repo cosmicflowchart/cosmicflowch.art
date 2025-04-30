@@ -7,8 +7,7 @@ export const load = async ({ params }) => {
 			`filters[slug][$eqi]=${params.slug}` +
 			'&populate[0]=content.image' +
 			'&populate[1]=content.images' +
-			'&populate[2]=steps.images' +
-			'&populate[3]=images',
+			'&populate[2]=image',
 		{
 			method: 'GET',
 			headers: {

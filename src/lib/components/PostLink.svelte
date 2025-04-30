@@ -7,9 +7,6 @@
 
 	let image = post.image;
 	let imageHeight = 150;
-	if (post.images) {
-		image = post.images[0];
-	}
 </script>
 
 <a

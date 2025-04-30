@@ -1,16 +1,10 @@
 <script lang="ts">
-	import { slide, fade } from 'svelte/transition';
-	import { elasticInOut } from 'svelte/easing';
+	import type { Image } from '$lib/types';
 	import { flip } from 'svelte/animate';
 
-	export let images: {
-		alternativeText: string;
-		height: number;
-		id: number | string;
-		url: string;
-		width: number;
-	}[] = [];
+	export let images: Image[] = [];
 	export let width = 400;
+	const height = Math.max(...images.map((image) => (image.height * width) / image.width));
 
 	let currentSlide = 0;
 	let displayImages =
@@ -37,15 +31,20 @@
 </script>
 
 <div>
-	<div class={`flex overflow-hidden rounded-xl`} style="width: {width}px;">
+	<div
+		class="flex overflow-hidden items-center rounded-xl bg-cfc-purple-700/25"
+		style="width:{width}px; height: {height}px"
+	>
 		{#each displayImages as image, index (image.id)}
 			<img
-				class="relative -left-full"
+				animate:flip={{ duration: 500 }}
+				alt={image.alternativeText}
+				class="flex relative -left-full"
 				class:opacity-0={index == displayImages.length - 1}
 				src={image.url}
-				alt={image.alternativeText}
-				style="aspect-ratio: {image.width / image.height}"
-				animate:flip={{ duration: 500 }}
+				height={(image.height * width) / image.width}
+				{width}
+				style="width: {width}px; height: {(image.height * width) / image.width}px"
 			/>
 		{/each}
 	</div>

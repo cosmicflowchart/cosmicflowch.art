@@ -1,5 +1,7 @@
 <script>
+	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import RichText from '$lib/components/RichText.svelte';
+
 	const { data } = $props();
 	const { post } = data;
 
@@ -53,6 +55,10 @@
 						alt={block.image.alternativeText}
 					/>
 				</div>
+			</div>
+		{:else if block.__component === 'content.image-carousel'}
+			<div class="flex justify-center py-4">
+				<ImageCarousel images={block.images} width={block.width || defaultImageHeight} />
 			</div>
 		{/if}
 	{/each}

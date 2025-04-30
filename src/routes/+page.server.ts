@@ -4,8 +4,8 @@ export const load = async () => {
 	const homepageResponse = await fetch(
 		`${STRAPI_API_URL}/api/homepage` +
 			'?populate[0]=events.dates' +
-			'&populate[1]=featuredProjects.images' +
-			'&populate[2]=featuredPatterns.images' +
+			'&populate[1]=featuredProjects.image' +
+			'&populate[2]=featuredPatterns.image' +
 			'&populate[3]=aboutMePicture',
 		{
 			method: 'GET',

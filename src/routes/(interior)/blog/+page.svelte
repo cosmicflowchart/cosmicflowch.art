@@ -29,7 +29,7 @@
 		</a>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-		{#each data.posts as post}
+		{#each data.posts as post (post.slug)}
 			<div
 				class="flex justify-center px-4 py-6 m-4 bg-cfc-purple-700/25
 			rounded-xl"

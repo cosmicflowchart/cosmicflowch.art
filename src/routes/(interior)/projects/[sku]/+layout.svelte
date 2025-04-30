@@ -9,7 +9,7 @@
 	<MetaTags
 		title={data.project.title}
 		description={data.project.shortDescription}
-		image={data.project.images ? data.project.images[0] : null}
+		image={data.project.image}
 	/>
 </svelte:head>
 

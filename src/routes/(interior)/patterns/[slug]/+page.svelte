@@ -7,11 +7,7 @@
 </script>
 
 <svelte:head>
-	<MetaTags
-		title={pattern.title}
-		description={pattern.shortDescription}
-		image={pattern.images[0]}
-	/>
+	<MetaTags title={pattern.title} description={pattern.shortDescription} image={pattern.image} />
 </svelte:head>
 
 <div class="max-w-screen-lg mx-auto px-4">

@@ -1,7 +1,5 @@
 <script>
-	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
-	import ImageFlexbox from '$lib/components/ImageFlexbox.svelte';
-	import ImageGrid from '$lib/components/ImageGrid.svelte';
+	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 
 	const { data } = $props();
@@ -17,10 +15,6 @@
 		day: 'numeric',
 		year: 'numeric'
 	});
-
-	const defaultImageHeight = 500;
-	const defaultImageWidth = 500;
-	const defaultColumns = 4;
 </script>
 
 <svelte:head>
@@ -45,42 +39,6 @@
 	<RichText richText={post.description} />
 
 	{#each post.content as block}
-		{#if block.__component === 'content.text-block'}
-			<RichText heading2Class="text-4xl my-4" richText={block.text} />
-		{:else if block.__component === 'content.image'}
-			<div class="flex flex-wrap justify-center px-4">
-				<div class="p-4">
-					<img
-						class="rounded-xl"
-						height={block.height || defaultImageHeight}
-						width={block.width ||
-							(block.image.width * (block.height || defaultImageHeight)) / block.image.height}
-						src={block.image.url}
-						alt={block.image.alternativeText}
-					/>
-				</div>
-			</div>
-		{:else if block.__component === 'content.image-carousel'}
-			<div class="flex justify-center py-4">
-				<ImageCarousel images={block.images} width={block.width || defaultImageWidth} />
-			</div>
-		{:else if block.__component === 'content.image-flexbox'}
-			<div class="flex justify-center py-4">
-				<ImageFlexbox
-					images={block.images}
-					imageWidth={block.imageWidth || null}
-					imageHeight={block.imageHeight || defaultImageHeight}
-				/>
-			</div>
-		{:else if block.__component === 'content.image-grid'}
-			<div class="flex justify-center py-4">
-				<ImageGrid
-					images={block.images}
-					imageWidth={block.imageWidth || null}
-					imageHeight={block.imageHeight || null}
-					columns={block.columns || defaultColumns}
-				/>
-			</div>
-		{/if}
+		<ContentBlock {block} />
 	{/each}
 </div>

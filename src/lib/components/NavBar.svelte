@@ -54,7 +54,7 @@
 		</div>
 	</div>
 
-	<div class="hidden md:flex my-2 items-center space-y-0 flex-row space-x-10 mt-0" transition:slide>
+	<div class="hidden md:flex my-2 items-center space-y-0 flex-row space-x-10 mt-0">
 		{#each links as { title, href }}
 			<a
 				class="text-3xl text-cfc-purple-200 hover:text-cfc-purple-400 focus:text-cfc-purple-400"

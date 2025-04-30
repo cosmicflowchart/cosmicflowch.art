@@ -1,19 +1,17 @@
 <script lang="ts">
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 	import { selectImageUrlForSize } from '$lib/utils';
 	const { children, data } = $props();
 </script>
 
 <svelte:head>
-	<title>{data.project.title} | Cosmic Flowchart</title>
-	<meta name="description" content={data.project.shortDescription} />
-	<meta name="og:description" content={data.project.shortDescription} />
-	<meta name="og:title" content="{data.project.title} | Cosmic Flowchart" />
-	<meta name="og:locale" content="en_US" />
-	{#if data.project.images}
-		<meta name="og:image" content={data.project.images[0].url} />
-	{/if}
+	<MetaTags
+		title={data.project.title}
+		description={data.project.shortDescription}
+		image={data.project.images ? data.project.images[0] : null}
+	/>
 </svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">

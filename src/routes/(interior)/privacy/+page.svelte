@@ -1,23 +1,18 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 
-	const title = 'Privacy Notice';
 	const lastUpdated = '2024-12-22';
 	const githubUrl =
 		'https://github.com/cosmicflowchart/cosmicflowch.art/commits/main/src/routes/(interior)/privacy/%2Bpage.svelte';
-	const description = 'Privacy notice for cosmicflowch.art';
 </script>
 
 <svelte:head>
-	<title>{title} | Cosmic Flowchart</title>
-	<meta name="description" content={description} />
-	<meta name="og:description" content={description} />
-	<meta name="og:title" content="{title} | Cosmic Flowchart" />
-	<meta name="og:locale" content="en_US" />
+	<MetaTags title="Privacy Notice" description="Privacy notice for cosmicflowch.art" />
 </svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">
-	<h1 class="text-6xl text-center my-4">{title}</h1>
+	<h1 class="text-6xl text-center my-4">Privacy Notice</h1>
 
 	<div class="max-w-screen-md text-xl mx-auto space-y-4 mb-4">
 		<p>

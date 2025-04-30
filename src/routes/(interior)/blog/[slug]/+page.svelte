@@ -1,5 +1,6 @@
 <script>
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 
 	const { data } = $props();
@@ -18,14 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{post.title} | Cosmic Flowchart</title>
-	<meta name="description" content={post.shortDescription} />
-	<meta name="og:description" content={post.shortDescription} />
-	<meta name="og:title" content="{post.title} | Cosmic Flowchart" />
-	<meta name="og:locale" content="en_US" />
-	{#if post.image}
-		<meta name="og:image" content={post.image.url} />
-	{/if}
+	<MetaTags title={post.title} description={post.shortDescription} image={post.image} />
 </svelte:head>
 
 <div class="max-w-screen-lg mx-auto px-4">

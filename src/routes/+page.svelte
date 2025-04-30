@@ -3,6 +3,7 @@
 	import HomepageCardContainer from '$lib/components/HomepageCardContainer.svelte';
 	import HomepageLogo from '$lib/components/HomepageLogo.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PostLink from '$lib/components/PostLink.svelte';
 	import RichText from '$lib/components/RichText.svelte';
 
@@ -14,14 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Cosmic Flowchart</title>
-	<meta name="description" content={pageDescription} />
-	<meta name="og:description" content={pageDescription} />
-	<meta name="og:title" content="Cosmic Flowchart" />
-	<meta name="og:locale" content="en_US" />
-	{#if data.homepage.aboutMePicture}
-		<meta name="og:image" content={data.homepage.aboutMePicture.url} />
-	{/if}
+	<MetaTags description={pageDescription} />
 </svelte:head>
 
 <main class="max-w-screen-lg mx-auto min-h-[calc(100vh-120px)] px-4">

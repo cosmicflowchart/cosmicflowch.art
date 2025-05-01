@@ -8,6 +8,7 @@
 	const height = Math.max(...images.map((image) => (image.height * width) / image.width));
 
 	let currentSlide = 0;
+	let hideIndex: number | null = null;
 	let displayImages =
 		images.length !== 2
 			? [images[images.length - 1], ...images.slice(0, images.length - 1)]
@@ -19,11 +20,13 @@
 				];
 
 	const nextImage = () => {
+		hideIndex = images.length - 1;
 		currentSlide = (currentSlide + 1) % images.length;
 		displayImages = [...displayImages.slice(1), displayImages[0]];
 	};
 
 	const previousImage = () => {
+		hideIndex = 0;
 		currentSlide = (currentSlide - 1 + displayImages.length) % displayImages.length;
 		displayImages = [
 			displayImages[displayImages.length - 1],
@@ -42,7 +45,7 @@
 				animate:flip={{ duration: 500 }}
 				alt={image.alternativeText}
 				class="flex relative -left-full"
-				class:opacity-0={index == displayImages.length - 1}
+				class:opacity-0={index == hideIndex}
 				src={selectImageUrlForSize(image, { width })}
 				height={(image.height * width) / image.width}
 				{width}

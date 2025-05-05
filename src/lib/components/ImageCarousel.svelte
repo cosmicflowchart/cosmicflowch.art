@@ -20,14 +20,14 @@
 				];
 
 	const nextImage = () => {
-		hideIndex = images.length - 1;
+		hideIndex = displayImages.length - 1;
 		currentSlide = (currentSlide + 1) % images.length;
 		displayImages = [...displayImages.slice(1), displayImages[0]];
 	};
 
 	const previousImage = () => {
 		hideIndex = 0;
-		currentSlide = (currentSlide - 1 + displayImages.length) % displayImages.length;
+		currentSlide = (currentSlide - 1 + images.length) % images.length;
 		displayImages = [
 			displayImages[displayImages.length - 1],
 			...displayImages.slice(0, displayImages.length - 1)

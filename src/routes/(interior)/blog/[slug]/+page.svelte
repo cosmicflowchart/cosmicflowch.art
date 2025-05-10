@@ -30,7 +30,6 @@
 			(Edited: {updatedDate})
 		{/if}
 	</p>
-	<RichText richText={post.description} />
 
 	{#each post.content as block}
 		<ContentBlock {block} />

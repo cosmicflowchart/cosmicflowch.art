@@ -1,7 +1,6 @@
 <script>
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import MetaTags from '$lib/components/MetaTags.svelte';
-	import RichText from '$lib/components/RichText.svelte';
 
 	const { data } = $props();
 	const { post } = data;

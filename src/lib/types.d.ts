@@ -5,6 +5,7 @@ export type ContentBlock = {
 		| 'content.image-carousel'
 		| 'content.image-flexbox'
 		| 'content.image-grid';
+	alignment?: 'left' | 'center' | 'right' | 'justify' | 'start' | 'end';
 	columns?: number;
 	height?: number;
 	image?: Image;

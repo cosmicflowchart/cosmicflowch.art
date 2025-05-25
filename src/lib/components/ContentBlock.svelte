@@ -11,10 +11,34 @@
 	export let defaultImageHeight = 500;
 	export let defaultImageWidth = 400;
 	export let defaultColumns = 4;
+
+	let alignmentClass = 'text-left';
+	switch (block.alignment) {
+		case 'left':
+			alignmentClass = 'text-left';
+			break;
+		case 'center':
+			alignmentClass = 'text-center';
+			break;
+		case 'right':
+			alignmentClass = 'text-right';
+			break;
+		case 'justify':
+			alignmentClass = 'text-justify';
+			break;
+		case 'start':
+			alignmentClass = 'text-start';
+			break;
+		case 'end':
+			alignmentClass = 'text-end';
+			break;
+	}
 </script>
 
 {#if block.__component === 'content.text-block'}
-	<RichText heading2Class="text-4xl my-4" richText={block.text} />
+	<div class={alignmentClass}>
+		<RichText heading2Class="text-4xl my-4" richText={block.text} />
+	</div>
 {:else if block.__component === 'content.image'}
 	{#if block.image}
 		<div class="flex flex-wrap justify-center px-4">

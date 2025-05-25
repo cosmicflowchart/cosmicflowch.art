@@ -34,7 +34,6 @@
 				class="rounded-xl"
 				height={getHeight(image)}
 				width={getWidth(image)}
-				style="height: {getHeight(image)}px; width: {getWidth(image)}px;"
 				src={selectImageUrlForSize(image, { height: getHeight(image), width: getWidth(image) })}
 				alt={image.alternativeText}
 			/>

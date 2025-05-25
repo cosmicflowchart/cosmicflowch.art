@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Image } from '$lib/types';
+	import { selectImageUrlForSize } from '$lib/utils';
 
 	export let images: Image[] = [];
 	export let imageWidth: number | null = null;
@@ -35,7 +36,13 @@
 >
 	{#each images as image}
 		<div class="p-4">
-			<img class="rounded-xl" src={image.url} alt={image.alternativeText} />
+			<img
+				class="rounded-xl"
+				height={getHeight(image)}
+				width={getWidth(image)}
+				src={selectImageUrlForSize(image, { height: getHeight(image), width: getWidth(image) })}
+				alt={image.alternativeText}
+			/>
 		</div>
 	{/each}
 </div>

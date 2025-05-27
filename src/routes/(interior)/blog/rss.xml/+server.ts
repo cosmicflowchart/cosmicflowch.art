@@ -43,7 +43,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	<channel>
 		<title>Cosmic Flowchart</title>
 		<description>
-			My blog on 
+			My blog about my crochet projects, patterns, and the markets I sell them at.
 		</description>
 		<link>https://cosmicflowch.art/</link>
 	${blogPosts.map(
@@ -51,7 +51,7 @@ export const GET: RequestHandler = async ({ url }) => {
 			<title>${post.title}</title>
 			<link>https://cosmicflowch.art/blog/${post.slug}/</link>
 			<guid isPermaLink="true">https://cosmicflowch.art/blog/${post.slug}/</guid>
-			<description>{post.shortDescription}</description>
+			<description>${post.shortDescription}</description>
 			<pubDate>${new Date(post.createdAt).toUTCString()}</pubDate>
 		</item>
 `

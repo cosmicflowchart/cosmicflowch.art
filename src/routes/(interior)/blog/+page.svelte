@@ -13,6 +13,12 @@
 		title="Blog"
 		description="A craft blog about the crochet items I make and the events I sell them at."
 	/>
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="RSS feed for the Cosmic Flowchart Blog"
+		href="blog/rss.xml"
+	/>
 </svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">

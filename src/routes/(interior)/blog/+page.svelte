@@ -15,16 +15,16 @@
 	/>
 	<link
 		rel="alternate"
-		type="application/rss+xml"
-		title="RSS feed for the Cosmic Flowchart Blog"
-		href="blog/rss.xml"
+		type="application/atom+xml"
+		title="Atom feed for the Cosmic Flowchart Blog"
+		href="blog/feed.atom"
 	/>
 </svelte:head>
 
 <div class="max-w-screen-xl mx-auto px-4">
 	<div class="flex justify-center items-center space-x-4">
 		<h1 class="text-6xl text-center my-4">Blog</h1>
-		<a href="blog/rss.xml" aria-label="RSS Feed">
+		<a href="blog/feed.atom" aria-label="Atom Feed">
 			<Icon iconName="rss" class="w-8 h-8" />
 		</a>
 	</div>

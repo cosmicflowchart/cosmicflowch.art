@@ -47,30 +47,36 @@ export const GET: RequestHandler = async ({ url }) => {
 		blogPosts.push(...blogPostsPage.data);
 	}
 
-	const xml = `<rss version="2.0">
-	<channel>
-		<title>Cosmic Flowchart</title>
-		<description>
-			My blog about my crochet projects, patterns, and the markets I sell them at.
-		</description>
-		<link>https://cosmicflowch.art/</link>
+	const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Cosmic Flowchart</title>
+	<id>https://cosmicflowch.art/</id>
+	<link rel="alternate" href="https://cosmicflowch.art/" />
+	<link rel="self" href="https://cosmicflowch.art/blog/feed.atom" />
+	<updated>${new Date(Math.max(...blogPosts.map((post: any) => new Date(post.updatedAt)))).toUTCString()}</updated>
+	<author>
+		<name>Ulrich Feindt</name>
+	</author>
+	<description>
+		My blog about my crochet projects, patterns, and the markets I sell them at.
+	</description>
 	${blogPosts.map((post: any) => {
 		const content = post.content
 			.map((block: ContentBlock) => render(ContentBlockComponent, { props: { block: block } }).html)
 			.join('\n');
-		return `		<item>
-			<title>${post.title}</title>
-			<link>https://cosmicflowch.art/blog/${post.slug}/</link>
-			<guid isPermaLink="true">https://cosmicflowch.art/blog/${post.slug}/</guid>
-			<content type="html">
-				<![CDATA[${content}]]>
-			</content>
-			<pubDate>${new Date(post.createdAt).toUTCString()}</pubDate>
-		</item>
-`;
+		return `		<entry>
+		<title>${post.title}</title>
+		<link rel="alternate" type="text.html" href="https://cosmicflowch.art/blog/${post.slug}/" />
+		<id>https://cosmicflowch.art/blog/${post.slug}/</id>
+		<published>${new Date(post.createdAt).toUTCString()}</published>
+		<updated>${new Date(post.updatedAt).toUTCString()}</updated>
+		<description><![CDATA[${post.description}]]></description>
+		<content type="html">
+			<![CDATA[${content}]]>
+		</content>
+	</entry>`;
 	})}
-	</channel>
-</rss>`;
+</feed>`;
 
-	return new Response(xml, { headers: { 'Content-Type': 'application/xml' } });
+	return new Response(xml, { headers: { 'Content-Type': 'application/atom+xml' } });
 };

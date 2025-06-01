@@ -19,6 +19,12 @@
 
 <svelte:head>
 	<MetaTags title={post.title} description={post.shortDescription} image={post.image} />
+	<link
+		rel="alternate"
+		type="application/atom+xml"
+		title="Atom feed for the Cosmic Flowchart Blog"
+		href="blog/feed.atom"
+	/>
 </svelte:head>
 
 <div class="max-w-screen-lg mx-auto px-4">

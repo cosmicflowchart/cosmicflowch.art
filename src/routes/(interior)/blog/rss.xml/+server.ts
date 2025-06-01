@@ -62,7 +62,6 @@ export const GET: RequestHandler = async ({ url }) => {
 			<title>${post.title}</title>
 			<link>https://cosmicflowch.art/blog/${post.slug}/</link>
 			<guid isPermaLink="true">https://cosmicflowch.art/blog/${post.slug}/</guid>
-			<description><![CDATA[${post.shortDescription}]]></description>
 			<content type="html">
 				<![CDATA[${content}]]>
 			</content>

@@ -5,7 +5,7 @@
 	export let socialLinks: { iconName: string; url: string; label: string }[] = [];
 </script>
 
-<div class="flex justify-center space-x-4 max-w-screen-2xl mx-auto p-4">
+<div class="sm:flex sm:space-x-4 max-sm:space-y-4 justify-center max-w-screen-2xl mx-auto p-4">
 	<div>
 		<p class="text-2xl space-x-2">
 			{#each pageLinks as link}
@@ -15,13 +15,17 @@
 			{/each}
 		</p>
 		<p class="text-lg">
-			Cosmic Flowchart &copy; 2024{lastUpdateYear > 2024 ? `-${lastUpdateYear - 2000}` : ''} by Ulrich
-			Feindt.
+			Cosmic Flowchart
+			<span class="whitespace-nowrap">
+				&copy; 2024{lastUpdateYear > 2024 ? `-${lastUpdateYear - 2000}` : ''}
+			</span>
+			<span class="whitespace-nowrap">by Ulrich Feindt.</span>
 		</p>
 		<p class="text-lg">
 			Unless noted otherwise, this work is licensed under
 			<a
 				href="https://creativecommons.org/licenses/by-sa/4.0"
+				class="whitespace-nowrap"
 				target="_blank"
 				rel="license noopener noreferrer"
 			>

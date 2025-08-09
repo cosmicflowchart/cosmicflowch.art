@@ -5,6 +5,7 @@
 
 	export let images: Image[] = [];
 	export let width = 400;
+	// width = Math.min(width, 300);
 	const height = Math.max(...images.map((image) => (image.height * width) / image.width));
 
 	let currentSlide = 0;
@@ -38,7 +39,7 @@
 <div>
 	<div
 		class="flex overflow-hidden items-center rounded-xl bg-cfc-purple-700/25"
-		style="width:{width}px; height: {height}px"
+		style="max-width:{width}px; max-height: {height}px"
 	>
 		{#each displayImages as image, index (image.id)}
 			<img
@@ -49,7 +50,6 @@
 				src={selectImageUrlForSize(image, { width })}
 				height={(image.height * width) / image.width}
 				{width}
-				style="width: {width}px; height: {(image.height * width) / image.width}px"
 			/>
 		{/each}
 	</div>

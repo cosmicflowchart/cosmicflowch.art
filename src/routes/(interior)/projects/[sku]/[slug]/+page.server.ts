@@ -7,7 +7,8 @@ export const load = async ({ params }) => {
 			`?filters[sku][$eqi]=${params.sku}` +
 			'&populate[0]=content.image' +
 			'&populate[1]=content.images' +
-			'&populate[2]=image',
+			'&populate[2]=image' +
+			'&populate[3]=project_group.projects.image',
 		{
 			method: 'GET',
 			headers: {
@@ -16,7 +17,6 @@ export const load = async ({ params }) => {
 			}
 		}
 	);
-
 	const project = await response.json();
 
 	if (project.data.length > 0) {

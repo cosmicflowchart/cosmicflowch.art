@@ -2,11 +2,19 @@
 	import { selectImageUrlForSize } from '$lib/utils';
 
 	export let href, post;
+	export let image = null;
+	export let imageHeight = 150;
 	export let showDescription = false;
 	export let showCreatedAt = false;
+	export let title = null;
+	export let titleClass = 'text-2xl text-center';
 
-	let image = post.image;
-	let imageHeight = 150;
+	if (!image) {
+		image = post.image;
+	}
+	if (!title) {
+		title = post.title;
+	}
 </script>
 
 <a
@@ -25,7 +33,7 @@
 		/>
 	{/if}
 	<div>
-		<p class="text-2xl text-center">{post.title}</p>
+		<p class={titleClass}>{title}</p>
 		{#if showCreatedAt}
 			<p class="text-md text-center italic">
 				{new Date(post.createdAt).toLocaleDateString('en-SE', {
@@ -36,7 +44,7 @@
 			</p>
 		{/if}
 		{#if showDescription}
-			<p class="text- text-center">{post.shortDescription}</p>
+			<p class="text-md text-center">{post.shortDescription}</p>
 		{/if}
 	</div>
 </a>

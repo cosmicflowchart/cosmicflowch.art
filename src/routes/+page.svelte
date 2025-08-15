@@ -23,7 +23,10 @@
 		<HomepageLogo class="max-w-md" />
 	</div>
 
-	<div class="flex justify-center my-8 space-x-8">
+	<div
+		class="grid grid-cols-2 xs:flex justfy-items-center justify-center my-8 gap-x-8
+		xxs:gap-x-16 xs:gap-x-4 gap-y-4 w-fit mx-auto"
+	>
 		{#each data.footer.socialLinks as link}
 			<a
 				href={link.url}

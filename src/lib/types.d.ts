@@ -77,3 +77,28 @@ export type LinkedMaterial = {
 export type OtherMaterial = {
 	description: string;
 };
+
+type RichTextTextElement = {
+	bold?: boolean;
+	italic?: boolean;
+	strikethrough?: boolean;
+	text: string;
+	type: 'text';
+	underline?: boolean;
+};
+
+type RichTextLinkElement = {
+	type: 'link';
+	url: string;
+	children: RichTextTextElement[];
+};
+
+type RichTextElement =
+	| {
+			type: 'list' | 'list-item' | 'heading' | 'paragraph';
+			format?: 'ordered' | 'unordered';
+			children: RichTextElement[];
+			level?: number;
+	  }
+	| RichTextLinkElement
+	| RichTextTextElement;

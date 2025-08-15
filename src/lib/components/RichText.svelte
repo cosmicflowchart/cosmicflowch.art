@@ -1,26 +1,6 @@
 <script lang="ts">
-	import RichtTextText from '$lib/components/RichTextText.svelte';
-
-	type RichTextElement = {
-		type: 'list' | 'list-item' | 'heading' | 'paragraph';
-		format?: 'ordered' | 'unordered';
-		children: (LinkElement | TextElement | RichTextElement)[];
-		level?: number;
-	};
-
-	type TextElement = {
-		bold?: boolean;
-		italic?: boolean;
-		type: 'text';
-		text: string;
-		underline?: boolean;
-	};
-
-	type LinkElement = {
-		type: 'link';
-		url: string;
-		children: TextElement[];
-	};
+	import RichText from '$lib/components/RichText.svelte';
+	import type { RichTextElement } from '$lib/types';
 
 	export let richText: RichTextElement[];
 	export let linkClass = 'text-cfc-purple-200 hover:text-cfc-purple-400';
@@ -30,10 +10,36 @@
 	export let orderedListClass = 'text-xl my-4 mx-auto list-decimal pl-6';
 	export let paragraphClass = 'text-xl my-4 mx-auto';
 	export let unorderedListClass = 'text-xl my-4 mx-auto list-disc pl-6';
+
+	const props = {
+		linkClass,
+		heading1Class,
+		heading2Class,
+		heading3Class,
+		orderedListClass,
+		paragraphClass,
+		unorderedListClass
+	};
 </script>
 
 {#each richText as element}
-	{#if element.type === 'heading'}
+	{#if element.type === 'text'}
+		{#if element.bold}
+			<b>{element.text}</b>
+		{:else if element.italic}
+			<i>{element.text}</i>
+		{:else if element.underline}
+			<u>{element.text}</u>
+		{:else if element.strikethrough}
+			<span class="line-through">{element.text}</span>
+		{:else}
+			{element.text}
+		{/if}
+	{:else if element.type === 'link'}
+		<a class={linkClass} href={element.url}>
+			<RichText richText={element.children} {...props} />
+		</a>
+	{:else if element.type === 'heading'}
 		{#if element.level === 1}
 			<h1 class={heading1Class}>
 				{element.children[0].type === 'text' ? element.children[0].text : ''}
@@ -50,56 +56,18 @@
 	{:else if element.type === 'list'}
 		{#if element.format === 'ordered'}
 			<ol class={orderedListClass}>
-				{#each element.children as child}
-					{#if child.type === 'list-item'}
-						{#each child.children as grandchild}
-							{#if grandchild.type === 'text'}
-								<RichtTextText text={grandchild} />
-							{:else if grandchild.type === 'link'}
-								<a class={linkClass} href={grandchild.url}>
-									{#each grandchild.children as greatGrandchild}
-										<RichtTextText text={greatGrandchild} />
-									{/each}
-								</a>
-							{/if}
-						{/each}
-					{/if}
-				{/each}
+				<RichText richText={element.children} {...props} />
 			</ol>
 		{:else if element.format === 'unordered'}
 			<ul class={unorderedListClass}>
-				{#each element.children as child}
-					{#if child.type === 'list-item'}
-						<li>
-							{#each child.children as grandchild}
-								{#if grandchild.type === 'text'}
-									<RichtTextText text={grandchild} />
-								{:else if grandchild.type === 'link'}
-									<a class={linkClass} href={grandchild.url}>
-										{#each grandchild.children as greatGrandchild}
-											<RichtTextText text={greatGrandchild} />
-										{/each}
-									</a>
-								{/if}
-							{/each}
-						</li>
-					{/if}
-				{/each}
+				<RichText richText={element.children} {...props} />
 			</ul>
 		{/if}
+	{:else if element.type === 'list-item'}
+		<li><RichText richText={element.children} {...props} /></li>
 	{:else if element.type === 'paragraph'}
 		<p class={paragraphClass}>
-			{#each element.children as child}
-				{#if child.type === 'text'}
-					<RichtTextText text={child} />
-				{:else if child.type === 'link'}
-					<a class={linkClass} href={child.url}>
-						{#each child.children as grandchild}
-							<RichtTextText text={grandchild} />
-						{/each}
-					</a>
-				{/if}
-			{/each}
+			<RichText richText={element.children} {...props} />
 		</p>
 	{/if}
 {/each}

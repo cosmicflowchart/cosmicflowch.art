@@ -55,6 +55,12 @@
 						{#each child.children as grandchild}
 							{#if grandchild.type === 'text'}
 								<RichtTextText text={grandchild} />
+							{:else if grandchild.type === 'link'}
+								<a class={linkClass} href={grandchild.url}>
+									{#each grandchild.children as greatGrandchild}
+										<RichtTextText text={greatGrandchild} />
+									{/each}
+								</a>
 							{/if}
 						{/each}
 					{/if}
@@ -68,6 +74,12 @@
 							{#each child.children as grandchild}
 								{#if grandchild.type === 'text'}
 									<RichtTextText text={grandchild} />
+								{:else if grandchild.type === 'link'}
+									<a class={linkClass} href={grandchild.url}>
+										{#each grandchild.children as greatGrandchild}
+											<RichtTextText text={greatGrandchild} />
+										{/each}
+									</a>
 								{/if}
 							{/each}
 						</li>

@@ -8,7 +8,11 @@ export const load = async ({ params }) => {
 			'&populate[0]=content.image' +
 			'&populate[1]=content.images' +
 			'&populate[2]=image' +
-			'&populate[3]=project_group.projects.image',
+			'&populate[3]=project_group.projects.image' +
+			'&populate[4]=primaryMaterial.materialVariant.materialGroup' +
+			'&populate[5]=secondaryMaterial.materialVariant.materialGroup' +
+			'&populate[6]=otherPrimaryMaterial' +
+			'&populate[7]=otherSecondaryMaterial',
 		{
 			method: 'GET',
 			headers: {

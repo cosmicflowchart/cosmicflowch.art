@@ -1,13 +1,21 @@
 <script lang="ts">
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
+	import MaterialList from '$lib/components/MaterialList.svelte';
 	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PostLink from '$lib/components/PostLink.svelte';
+	import { formatMaterial } from '$lib/utils.js';
 
 	const { data } = $props();
 	let group_projects = $derived.by(() =>
 		data.project.project_group?.projects
 			?.filter((p) => p.sku !== data.project.sku)
 			.sort((a, b) => a.sku.localeCompare(b.sku))
+	);
+	let primaryMaterial = $derived.by(() =>
+		formatMaterial(data.project.primaryMaterial, data.project.otherPrimaryMaterial)
+	);
+	let secondaryMaterial = $derived.by(() =>
+		formatMaterial(data.project.secondaryMaterial, data.project.otherSecondaryMaterial)
 	);
 </script>
 
@@ -28,6 +36,15 @@
 	{#each data.project.content as block (block.id)}
 		<ContentBlock {block} />
 	{/each}
+
+	{#if primaryMaterial.length > 0}
+		<h2 class="text-4xl text-center my-4">Primary Material</h2>
+		<MaterialList materials={primaryMaterial} />
+	{/if}
+	{#if secondaryMaterial.length > 0}
+		<h2 class="text-4xl text-center my-4">Secondary Material</h2>
+		<MaterialList materials={secondaryMaterial} />
+	{/if}
 
 	{#if data.project.project_group?.projects?.length > 1}
 		<h2 class="text-4xl text-center my-4">More Variants</h2>

@@ -50,3 +50,30 @@ export type Image = {
 		};
 	};
 };
+
+export type FormattedMaterial = {
+	title: string;
+	variants?: {
+		name: string;
+		manufacturerNumber: string;
+		amountGrams: number;
+		quantity: number;
+	}[];
+};
+
+export type LinkedMaterial = {
+	amountGrams: number;
+	materialVariant: {
+		name: string;
+		manufacturerNumber: string;
+		materialGroup: {
+			name: string;
+			brand: string;
+		};
+	};
+	quantity: number;
+};
+
+export type OtherMaterial = {
+	description: string;
+};

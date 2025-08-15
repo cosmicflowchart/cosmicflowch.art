@@ -46,12 +46,42 @@
 	};
 </script>
 
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	viewBox={paths[iconName].viewbox}
-	class={$$props.class}
-	{fill}
->
-	<!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-	<path d={paths[iconName].path} />
-</svg>
+{#if iconName === 'ko-fi'}
+	<svg viewBox="0 0 211.67 211.67" class={$$props.class}>
+		<!-- Icon from Blowfish (https://blowfish.page/). Copyright (c) 2022 Nuno Coração
+		(https://nunocoracao.com), available under the MIT license. -->
+		<defs>
+			<clipPath id="clipPath25"><path d="m0 6e2h1654.8V0H0z" fill="currentcolor"></path></clipPath>
+		</defs>
+		<g transform="translate(-3.0786 -29.59)">
+			<g transform="matrix(.35278 0 0 -.35278 3.0785 241.26)">
+				<g clip-path="url(#clipPath25)">
+					<g transform="translate(600 300)">
+						<path
+							d="m-3e2 3e2c-165.69.0-3e2-134.31-3e2-3e2s134.31-3e2 3e2-3e2C-134.32-3e2.0-165.69.0.0s-134.32 3e2-3e2 3e2zm-188.93-166.99h329.58c23.223.0 46.032-6.8325 65.073-20.125 18.412-12.856 36.378-33.646 42.697-67.02 14.674-77.514-43.568-135.76-126.12-131.18.438-21.268-3.8105-59.422-44.878-69.696-3.282-.821-6.6604-1.186-10.044-1.207-72.13-.448-222.53-.88916-222.53-.88916s-46.066-.01555-49.176 45.962c-1.023 77.88-.48339 223.69-.48339 223.69s-.02651 2.9267-.02051 3.6577c.043 5.607 4.4359 16.8 15.901 16.8zm312.71-55.573v-107.8s14.302-1.6507 31.907.54932c20.356 6.6 39.06 20.901 39.06 57.199.0 14.85-5.2614 25.601-11.837 33.239-9.341 10.848-23.152 16.809-37.469 16.809h-21.661z"
+							fill="currentcolor"
+						>
+						</path>
+					</g>
+					<g transform="translate(256.61 203.37)">
+						<path
+							d="m0 0c3.585-1.806 5.876.437 5.876.437s52.457 47.878 76.089 75.452c21.018 24.667 22.389 66.234-13.708 81.766-36.096 15.532-65.795-18.272-65.795-18.272-25.755 28.326-64.734 26.891-82.763 7.721-18.027-19.169-11.732-52.072 1.717-70.383 12.626-17.19 68.119-66.65 76.529-75.015.0.0.614-.641 2.055-1.706"
+							fill="currentcolor"
+						>
+						</path>
+					</g>
+				</g>
+			</g>
+		</g>
+	</svg>
+{:else}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox={paths[iconName].viewbox}
+		class={$$props.class}
+		{fill}
+	>
+		<!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+		<path d={paths[iconName].path} />
+	</svg>
+{/if}

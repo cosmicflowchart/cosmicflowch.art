@@ -10,10 +10,6 @@ export default {
 			black: '#000000',
 			white: '#ffffff'
 		},
-		screens: {
-			xs: '480px',
-			xxs: '300px'
-		},
 		extend: {
 			colors: {
 				'cfc-purple': {
@@ -34,6 +30,10 @@ export default {
 				exo2: ['Exo2'],
 				sans: ['Exo2', ...defaultTheme.fontFamily.sans],
 				potra: ['Potra']
+			},
+			screens: {
+				xs: '480px',
+				xxs: '300px'
 			}
 		}
 	},

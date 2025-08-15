@@ -21,7 +21,6 @@ export const load = async ({ url }) => {
 	);
 
 	const projectGroups = await response.json();
-	// console.log(projects);
 	return {
 		groups: projectGroups.data,
 		meta: projectGroups.meta

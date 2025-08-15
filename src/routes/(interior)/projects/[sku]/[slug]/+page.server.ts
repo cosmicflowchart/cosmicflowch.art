@@ -9,10 +9,13 @@ export const load = async ({ params }) => {
 			'&populate[1]=content.images' +
 			'&populate[2]=image' +
 			'&populate[3]=project_group.projects.image' +
-			'&populate[4]=primaryMaterial.materialVariant.materialGroup' +
-			'&populate[5]=secondaryMaterial.materialVariant.materialGroup' +
-			'&populate[6]=otherPrimaryMaterial' +
-			'&populate[7]=otherSecondaryMaterial',
+			'&populate[4]=project_group.patternExternal' +
+			'&populate[5]=primaryMaterial.materialVariant.materialGroup' +
+			'&populate[6]=secondaryMaterial.materialVariant.materialGroup' +
+			'&populate[7]=otherPrimaryMaterial' +
+			'&populate[8]=otherSecondaryMaterial' +
+			'&populate[9]=pattern' +
+			'&populate[10]=pattern_variant.pattern',
 		{
 			method: 'GET',
 			headers: {

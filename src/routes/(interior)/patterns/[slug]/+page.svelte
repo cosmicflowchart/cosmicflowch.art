@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+	import { kebabCase } from 'lodash-es';
+
 	import ContentBlock from '$lib/components/ContentBlock.svelte';
 	import MetaTags from '$lib/components/MetaTags.svelte';
 
@@ -16,4 +18,16 @@
 	{#each pattern.content as block}
 		<ContentBlock {block} />
 	{/each}
+	{#if pattern.pattern_variants.length > 0}
+		<h2 class="text-4xl text-center my-4">Variants</h2>
+		{#each pattern.pattern_variants as variant (variant.id)}
+			<h3 class="text-3xl text-center my-4" id={kebabCase(variant.project.variant)}>
+				{variant.project.variant}
+			</h3>
+
+			{#each variant.content as block}
+				<ContentBlock {block} />
+			{/each}
+		{/each}
+	{/if}
 </div>

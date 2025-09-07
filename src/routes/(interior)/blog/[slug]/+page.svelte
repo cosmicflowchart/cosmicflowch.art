@@ -3,18 +3,22 @@
 	import MetaTags from '$lib/components/MetaTags.svelte';
 
 	const { data } = $props();
-	const { post } = data;
+	let post = $derived(data.post);
 
-	const createdDate = new Date(post.createdAt).toLocaleDateString('en-SE', {
-		month: 'long',
-		day: 'numeric',
-		year: 'numeric'
-	});
-	const updatedDate = new Date(post.updatedAt).toLocaleDateString('en-SE', {
-		month: 'long',
-		day: 'numeric',
-		year: 'numeric'
-	});
+	let createdDate = $derived(
+		new Date(post.createdAt).toLocaleDateString('en-SE', {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric'
+		})
+	);
+	let updatedDate = $derived(
+		new Date(post.updatedAt).toLocaleDateString('en-SE', {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric'
+		})
+	);
 </script>
 
 <svelte:head>

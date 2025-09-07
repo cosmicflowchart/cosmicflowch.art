@@ -5,7 +5,7 @@
 	import MetaTags from '$lib/components/MetaTags.svelte';
 
 	const { data } = $props();
-	const { pattern } = data;
+	let pattern = $derived(data.pattern);
 </script>
 
 <svelte:head>

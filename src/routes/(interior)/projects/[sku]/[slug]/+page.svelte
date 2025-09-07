@@ -7,8 +7,7 @@
 	import { kebabCase } from 'lodash-es';
 
 	const { data } = $props();
-	// const { project } = data;
-	let project = $derived.by(() => data.project);
+	let project = $derived(data.project);
 	let group_projects = $derived.by(() =>
 		project.project_group?.projects
 			?.filter((p) => p.sku !== project.sku)

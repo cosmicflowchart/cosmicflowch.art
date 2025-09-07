@@ -7,7 +7,8 @@
 	import { kebabCase } from 'lodash-es';
 
 	const { data } = $props();
-	const { project } = data;
+	// const { project } = data;
+	let project = $derived.by(() => data.project);
 	let group_projects = $derived.by(() =>
 		project.project_group?.projects
 			?.filter((p) => p.sku !== project.sku)
@@ -34,7 +35,6 @@
 	{#each project.content as block (block.id)}
 		<ContentBlock {block} />
 	{/each}
-
 	{#if project.pattern_variant}
 		<div class="text-xl">
 			<b>Pattern:</b>
